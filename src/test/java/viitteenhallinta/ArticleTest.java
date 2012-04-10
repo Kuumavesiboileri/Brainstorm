@@ -91,8 +91,8 @@ public class ArticleTest {
                 + "\nPAGES = {158--170},"
                 + "\nMONTH = {jan},"
                 + "\nNOTE = {This is a note},"
-                + "\nKEY = {This is a key},\n";
-        
+                + "\nKEY = {This is a key},\n)";
+        assertEquals(oikeaRivi, artikkeli.toLaTexString());
     }
     
 

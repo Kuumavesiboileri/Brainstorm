@@ -92,7 +92,8 @@ public class ArticleTest {
                 + "\nMONTH = {jan},"
                 + "\nNOTE = {This is a note},"
                 + "\nKEY = {This is a key},\n";
-        
+        System.out.println(oikeaRivi);
+        System.out.println(saatuRivi);
     }
     
 

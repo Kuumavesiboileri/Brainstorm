@@ -30,10 +30,10 @@ public class ArticleTest {
     @Before
     public void setUp() {
         parseri = new Parser();
-        artikkeli = new Article("Tagi", "Jussi Paananen", "Suomen MM -juhlimisen herättämästä pahennuksesta vuonna 2011 ja miten se peilaa nyky-yhteiskuntaamme", "Täysin turhia tieteellisiä artikkeleita", 2012, parseri);
+        artikkeli = new Article("Tagi", "Jussi Paananen", "Suomen MM -juhlimisen herattamasta pahennuksesta vuonna 2011 ja miten se peilaa nyky-yhteiskuntaamme", "Taysin turhia tieteellisia artikkeleita", 2012, parseri);
         oikeaRivi = "Author: Jussi Paananen"
-                + "\nTitle: Suomen MM -juhlimisen herättämästä pahennuksesta vuonna 2011 ja miten se peilaa nyky-yhteiskuntaamme"
-                + "\nJournal: Täysin turhia tieteellisiä artikkeleita"
+                + "\nTitle: Suomen MM -juhlimisen herattamasta pahennuksesta vuonna 2011 ja miten se peilaa nyky-yhteiskuntaamme"
+                + "\nJournal: Taysin turhia tieteellisia artikkeleita"
                 + "\nYear: 2012";
     }
         //volume, number, pages, month, note, key
@@ -81,8 +81,8 @@ public class ArticleTest {
     public void testToLaTexStringWithCompulsoryVariables(){
           String oikeaLaTexRivi = "@Article(Tagi,"
                 +"\nAUTHOR = {Jussi Paananen},"
-                + "\nTITLE = {Suomen MM -juhlimisen herättämästä pahennuksesta vuonna 2011 ja miten se peilaa nyky-yhteiskuntaamme},"
-                + "\nJOURNAL = {Täysin turhia tieteellisiä artikkeleita},"
+                + "\nTITLE = {Suomen MM -juhlimisen herattamasta pahennuksesta vuonna 2011 ja miten se peilaa nyky-yhteiskuntaamme},"
+                + "\nJOURNAL = {Taysin turhia tieteellisia artikkeleita},"
                 + "\nYEAR = {2012},"
                 + "\n)";
           assertEquals(oikeaLaTexRivi, artikkeli.toLaTexString());
@@ -97,8 +97,8 @@ public class ArticleTest {
         artikkeli.setVolume(1);
         String oikeaLaTexRivi = "@Article(Tagi,"
                 +"\nAUTHOR = {Jussi Paananen},"
-                + "\nTITLE = {Suomen MM -juhlimisen herättämästä pahennuksesta vuonna 2011 ja miten se peilaa nyky-yhteiskuntaamme},"
-                + "\nJOURNAL = {Täysin turhia tieteellisiä artikkeleita},"
+                + "\nTITLE = {Suomen MM -juhlimisen herattamasta pahennuksesta vuonna 2011 ja miten se peilaa nyky-yhteiskuntaamme},"
+                + "\nJOURNAL = {Taysin turhia tieteellisia artikkeleita},"
                 + "\nYEAR = {2012},"
                 + "\nVOLUME = {1},"
                 + "\nNUMBER = {1},"

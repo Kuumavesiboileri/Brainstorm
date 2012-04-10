@@ -1,13 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<<<<<<< HEAD
-<<<<<<< HEAD
-<testsuite failures="1" time="0.048" errors="0" skipped="0" tests="5" name="viitteenhallinta.ArticleTest">
-=======
-<testsuite failures="0" time="0.029" errors="0" skipped="0" tests="6" name="viitteenhallinta.ArticleTest">
->>>>>>> 520053b15da76cb86679e828bfa2d90493670edd
-=======
-<testsuite failures="0" time="0.052" errors="0" skipped="0" tests="6" name="viitteenhallinta.ArticleTest">
->>>>>>> a7e9069e9246bd09599c9586db7a5968c85ae7a2
+<testsuite failures="0" time="0.142" errors="0" skipped="0" tests="6" name="viitteenhallinta.ArticleTest">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/usr/lib/jvm/java-6-sun-1.6.0.26/jre/lib/amd64"/>
@@ -27,15 +19,7 @@
     <property name="basedir" value="/fs-2/e/todjalka/NetBeansProjects/Viitteenhallinta"/>
     <property name="java.endorsed.dirs" value="/usr/lib/jvm/java-6-sun-1.6.0.26/jre/lib/endorsed"/>
     <property name="os.arch" value="amd64"/>
-<<<<<<< HEAD
-<<<<<<< HEAD
-    <property name="surefire.real.class.path" value="/fs-2/e/todjalka/NetBeansProjects/Viitteenhallinta/target/surefire/surefirebooter651728273898738380.jar"/>
-=======
-    <property name="surefire.real.class.path" value="/tmp/surefirebooter404184047025368739.jar"/>
->>>>>>> 520053b15da76cb86679e828bfa2d90493670edd
-=======
-    <property name="surefire.real.class.path" value="/fs-0/8/atteaalt/NetBeansProjects/viitteenhallinta/target/surefire/surefirebooter6256458706825776256.jar"/>
->>>>>>> a7e9069e9246bd09599c9586db7a5968c85ae7a2
+    <property name="surefire.real.class.path" value="/fs-2/e/todjalka/NetBeansProjects/Viitteenhallinta/target/surefire/surefirebooter2636507483724448564.jar"/>
     <property name="java.io.tmpdir" value="/tmp"/>
     <property name="line.separator" value="
 "/>
@@ -43,15 +27,7 @@
     <property name="os.name" value="Linux"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
     <property name="java.library.path" value="/usr/lib/jvm/java-6-sun-1.6.0.26/jre/lib/amd64/server:/usr/lib/jvm/java-6-sun-1.6.0.26/jre/lib/amd64:/usr/lib/jvm/java-6-sun-1.6.0.26/jre/../lib/amd64:/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib"/>
-<<<<<<< HEAD
-<<<<<<< HEAD
     <property name="surefire.test.class.path" value="/fs-2/e/todjalka/NetBeansProjects/Viitteenhallinta/target/test-classes:/fs-2/e/todjalka/NetBeansProjects/Viitteenhallinta/target/classes:/fs-2/e/todjalka/.m2/repository/junit/junit/4.10/junit-4.10.jar:/fs-2/e/todjalka/.m2/repository/org/hamcrest/hamcrest-core/1.1/hamcrest-core-1.1.jar:"/>
-=======
-    <property name="surefire.test.class.path" value="/fs-0/8/atteaalt/NetBeansProjects/viitteenhallinta/target/test-classes:/fs-0/8/atteaalt/NetBeansProjects/viitteenhallinta/target/generated-classes/cobertura:/fs-0/8/atteaalt/.m2/repository/junit/junit/4.10/junit-4.10.jar:/fs-0/8/atteaalt/.m2/repository/org/hamcrest/hamcrest-core/1.1/hamcrest-core-1.1.jar:/fs-0/8/atteaalt/.m2/repository/net/sourceforge/cobertura/cobertura/1.9.4.1/cobertura-1.9.4.1.jar:/fs-0/8/atteaalt/.m2/repository/org/apache/ant/ant/1.7.0/ant-1.7.0.jar:/fs-0/8/atteaalt/.m2/repository/org/apache/ant/ant-launcher/1.7.0/ant-launcher-1.7.0.jar:"/>
->>>>>>> 520053b15da76cb86679e828bfa2d90493670edd
-=======
-    <property name="surefire.test.class.path" value="/fs-0/8/atteaalt/NetBeansProjects/viitteenhallinta/target/test-classes:/fs-0/8/atteaalt/NetBeansProjects/viitteenhallinta/target/classes:/fs-0/8/atteaalt/.m2/repository/junit/junit/4.10/junit-4.10.jar:/fs-0/8/atteaalt/.m2/repository/org/hamcrest/hamcrest-core/1.1/hamcrest-core-1.1.jar:"/>
->>>>>>> a7e9069e9246bd09599c9586db7a5968c85ae7a2
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.class.version" value="50.0"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
@@ -61,25 +37,12 @@
     <property name="java.awt.printerjob" value="sun.print.PSPrinterJob"/>
     <property name="file.encoding" value="UTF-8"/>
     <property name="java.specification.version" value="1.6"/>
-<<<<<<< HEAD
     <property name="user.name" value="todjalka"/>
     <property name="java.class.path" value="/fs-2/e/todjalka/NetBeansProjects/Viitteenhallinta/target/test-classes:/fs-2/e/todjalka/NetBeansProjects/Viitteenhallinta/target/classes:/fs-2/e/todjalka/.m2/repository/junit/junit/4.10/junit-4.10.jar:/fs-2/e/todjalka/.m2/repository/org/hamcrest/hamcrest-core/1.1/hamcrest-core-1.1.jar:"/>
     <property name="java.vm.specification.version" value="1.0"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="java.home" value="/usr/lib/jvm/java-6-sun-1.6.0.26/jre"/>
-    <property name="sun.java.command" value="/fs-2/e/todjalka/NetBeansProjects/Viitteenhallinta/target/surefire/surefirebooter651728273898738380.jar /fs-2/e/todjalka/NetBeansProjects/Viitteenhallinta/target/surefire/surefire1971860446678447436tmp /fs-2/e/todjalka/NetBeansProjects/Viitteenhallinta/target/surefire/surefire3993740692401238058tmp"/>
-=======
-    <property name="user.name" value="atteaalt"/>
-    <property name="java.class.path" value="/fs-0/8/atteaalt/NetBeansProjects/viitteenhallinta/target/test-classes:/fs-0/8/atteaalt/NetBeansProjects/viitteenhallinta/target/classes:/fs-0/8/atteaalt/.m2/repository/junit/junit/4.10/junit-4.10.jar:/fs-0/8/atteaalt/.m2/repository/org/hamcrest/hamcrest-core/1.1/hamcrest-core-1.1.jar:"/>
-    <property name="java.vm.specification.version" value="1.0"/>
-    <property name="sun.arch.data.model" value="64"/>
-    <property name="java.home" value="/usr/lib/jvm/java-6-sun-1.6.0.26/jre"/>
-<<<<<<< HEAD
-    <property name="sun.java.command" value="/tmp/surefirebooter404184047025368739.jar /tmp/surefire3701083766239758697tmp /tmp/surefire7421301515634663318tmp"/>
->>>>>>> 520053b15da76cb86679e828bfa2d90493670edd
-=======
-    <property name="sun.java.command" value="/fs-0/8/atteaalt/NetBeansProjects/viitteenhallinta/target/surefire/surefirebooter6256458706825776256.jar /fs-0/8/atteaalt/NetBeansProjects/viitteenhallinta/target/surefire/surefire6042047181368342581tmp /fs-0/8/atteaalt/NetBeansProjects/viitteenhallinta/target/surefire/surefire5803182736382167538tmp"/>
->>>>>>> a7e9069e9246bd09599c9586db7a5968c85ae7a2
+    <property name="sun.java.command" value="/fs-2/e/todjalka/NetBeansProjects/Viitteenhallinta/target/surefire/surefirebooter2636507483724448564.jar /fs-2/e/todjalka/NetBeansProjects/Viitteenhallinta/target/surefire/surefire3667043507250562359tmp /fs-2/e/todjalka/NetBeansProjects/Viitteenhallinta/target/surefire/surefire8570478917615947478tmp"/>
     <property name="java.specification.vendor" value="Sun Microsystems Inc."/>
     <property name="user.language" value="fi"/>
     <property name="java.vm.info" value="mixed mode"/>
@@ -95,108 +58,10 @@
     <property name="sun.desktop" value="gnome"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase time="0.001" classname="viitteenhallinta.ArticleTest" name="constructorWorks"/>
+  <testcase time="0.002" classname="viitteenhallinta.ArticleTest" name="constructorWorks"/>
   <testcase time="0" classname="viitteenhallinta.ArticleTest" name="testSetVolume"/>
   <testcase time="0" classname="viitteenhallinta.ArticleTest" name="testSetVolumeAndPages"/>
   <testcase time="0" classname="viitteenhallinta.ArticleTest" name="testWithAllSetters"/>
-<<<<<<< HEAD
-<<<<<<< HEAD
-  <testcase time="0.004" classname="viitteenhallinta.ArticleTest" name="testToLaTexString">
-    <failure message="expected:&lt;[Author: Jussi Paananen
-Title: Suomen MM -juhlimisen herättämästä pahennuksesta vuonna 2011 ja miten se peilaa nyky-yhteiskuntaamme
-Journal: Täysin turhia tieteellisiä artikkeleita
-Year: 2012
-VOLUME = {1},
-NUMBER =]{1},
-PAGES = {158--1...&gt; but was:&lt;[@Article(Tagi,
-AUTHOR = {Jussi Paananen},
-TITLE = {Suomen MM -juhlimisen herättämästä pahennuksesta vuonna 2011 ja miten se peilaa nyky-yhteiskuntaamme},
-JOURNAL = {Täysin turhia tieteellisiä artikkeleita},
-YEAR = {2012},
-VOLUME = {1},
-NUMBER = ]{1},
-PAGES = {158--1...&gt;" type="org.junit.ComparisonFailure">org.junit.ComparisonFailure: expected:&lt;[Author: Jussi Paananen
-Title: Suomen MM -juhlimisen herättämästä pahennuksesta vuonna 2011 ja miten se peilaa nyky-yhteiskuntaamme
-Journal: Täysin turhia tieteellisiä artikkeleita
-Year: 2012
-VOLUME = {1},
-NUMBER =]{1},
-PAGES = {158--1...&gt; but was:&lt;[@Article(Tagi,
-AUTHOR = {Jussi Paananen},
-TITLE = {Suomen MM -juhlimisen herättämästä pahennuksesta vuonna 2011 ja miten se peilaa nyky-yhteiskuntaamme},
-JOURNAL = {Täysin turhia tieteellisiä artikkeleita},
-YEAR = {2012},
-VOLUME = {1},
-NUMBER = ]{1},
-PAGES = {158--1...&gt;
-	at org.junit.Assert.assertEquals(Assert.java:125)
-	at org.junit.Assert.assertEquals(Assert.java:147)
-	at viitteenhallinta.ArticleTest.testToLaTexString(ArticleTest.java:96)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
-	at java.lang.reflect.Method.invoke(Method.java:597)
-	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:45)
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
-	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:42)
-	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:20)
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:28)
-	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:30)
-	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:263)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:68)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:47)
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:231)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:60)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:229)
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:50)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:222)
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:28)
-	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:30)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:300)
-	at org.apache.maven.surefire.junit4.JUnit4TestSet.execute(JUnit4TestSet.java:35)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:115)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:97)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
-	at java.lang.reflect.Method.invoke(Method.java:597)
-	at org.apache.maven.surefire.booter.ProviderFactory$ClassLoaderProxy.invoke(ProviderFactory.java:103)
-	at $Proxy0.invoke(Unknown Source)
-	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:150)
-	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcess(SurefireStarter.java:91)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:69)
-</failure>
-    <system-out>Author: Jussi Paananen
-Title: Suomen MM -juhlimisen herättämästä pahennuksesta vuonna 2011 ja miten se peilaa nyky-yhteiskuntaamme
-Journal: Täysin turhia tieteellisiä artikkeleita
-Year: 2012
-VOLUME = {1},
-NUMBER ={1},
-PAGES = {158--170},
-MONTH = {jan},
-NOTE = {This is a note},
-KEY = {This is a key},
-)
-@Article(Tagi,
-AUTHOR = {Jussi Paananen},
-TITLE = {Suomen MM -juhlimisen herättämästä pahennuksesta vuonna 2011 ja miten se peilaa nyky-yhteiskuntaamme},
-JOURNAL = {Täysin turhia tieteellisiä artikkeleita},
-YEAR = {2012},
-VOLUME = {1},
-NUMBER = {1},
-PAGES = {158--170},
-MONTH = {jan},
-NOTE = {This is a note},
-KEY = {This is a key},
-)
-</system-out>
-  </testcase>
-=======
-  <testcase time="0.001" classname="viitteenhallinta.ArticleTest" name="testToLaTexStringWithCompulsoryVariables"/>
-  <testcase time="0" classname="viitteenhallinta.ArticleTest" name="testToLaTexStringWithAllVariables"/>
->>>>>>> 520053b15da76cb86679e828bfa2d90493670edd
-=======
   <testcase time="0" classname="viitteenhallinta.ArticleTest" name="testToLaTexStringWithCompulsoryVariables"/>
-  <testcase time="0.001" classname="viitteenhallinta.ArticleTest" name="testToLaTexStringWithAllVariables"/>
->>>>>>> a7e9069e9246bd09599c9586db7a5968c85ae7a2
+  <testcase time="0" classname="viitteenhallinta.ArticleTest" name="testToLaTexStringWithAllVariables"/>
 </testsuite>

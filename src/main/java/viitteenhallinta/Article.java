@@ -83,13 +83,13 @@ public class Article implements Viite {
             palautettava += "\nVolume: " + volume;
         }
         if (number != 0) {
-            palautettava += "\nSeries: " + number;
+            palautettava += "\nNumber: " + number;
         }
         if (pages != null) {
-            palautettava += "\nAddress: " + pages;
+            palautettava += "\nPages: " + pages;
         }
         if (month != null) {
-            palautettava += "\nEdition: " + month;
+            palautettava += "\nMonth: " + month;
         }
         if (note != null) {
             palautettava += "\nNote: " + note;
@@ -106,10 +106,10 @@ public class Article implements Viite {
             palautettava += "VOLUME = {" + volume + "},\n";
         }
         if (number != 0) {
-            palautettava += "SERIES = {" + number + "},\n";
+            palautettava += "NUMBER = {" + number + "},\n";
         }
         if (pages != null) {
-            palautettava += "ADDRESS = {" + parser.parse(pages) + "},\n";
+            palautettava += "PAGES = {" + parser.parse(pages) + "},\n";
         }      
         if (month != null) {
             palautettava += "MONTH = {" + parser.parse(month) + "},\n";

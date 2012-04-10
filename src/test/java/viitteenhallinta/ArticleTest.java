@@ -78,22 +78,36 @@ public class ArticleTest {
         assertEquals(oikeaRivi, artikkeli.toReadableString());
     }
     @Test
-    public void testToLaTexString(){
+    public void testToLaTexStringWithCompulsoryVariables(){
+          String oikeaLaTexRivi = "@Article(Tagi,"
+                +"\nAUTHOR = {Jussi Paananen},"
+                + "\nTITLE = {Suomen MM -juhlimisen herättämästä pahennuksesta vuonna 2011 ja miten se peilaa nyky-yhteiskuntaamme},"
+                + "\nJOURNAL = {Täysin turhia tieteellisiä artikkeleita},"
+                + "\nYEAR = {2012},"
+                + "\n)";
+          assertEquals(oikeaLaTexRivi, artikkeli.toLaTexString());
+    }
+    @Test
+    public void testToLaTexStringWithAllVariables(){
         artikkeli.setPages("158--170");
         artikkeli.setNumber(1);
         artikkeli.setMonth("jan");
         artikkeli.setNote("This is a note");
         artikkeli.setKey("This is a key");
         artikkeli.setVolume(1);
-        oikeaRivi += "\nVOLUME = {1},"
-                + "\nNUMBER ={1},"
+        String oikeaLaTexRivi = "@Article(Tagi,"
+                +"\nAUTHOR = {Jussi Paananen},"
+                + "\nTITLE = {Suomen MM -juhlimisen herättämästä pahennuksesta vuonna 2011 ja miten se peilaa nyky-yhteiskuntaamme},"
+                + "\nJOURNAL = {Täysin turhia tieteellisiä artikkeleita},"
+                + "\nYEAR = {2012},"
+                + "\nVOLUME = {1},"
+                + "\nNUMBER = {1},"
                 + "\nPAGES = {158--170},"
                 + "\nMONTH = {jan},"
                 + "\nNOTE = {This is a note},"
-                + "\nKEY = {This is a key},\n)";
-        System.out.println(oikeaRivi);
-        System.out.println(artikkeli.toLaTexString());
-        assertEquals(oikeaRivi, artikkeli.toLaTexString());
+                + "\nKEY = {This is a key},"
+                + "\n)";
+        assertEquals(oikeaLaTexRivi, artikkeli.toLaTexString());
     }
     
 

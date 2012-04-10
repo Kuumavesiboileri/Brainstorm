@@ -1,6 +1,7 @@
 -------------------------------------------------------------------------------
 Test set: viitteenhallinta.ArticleTest
 -------------------------------------------------------------------------------
+<<<<<<< HEAD
 Tests run: 5, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.08 sec <<< FAILURE!
 testToLaTexString(viitteenhallinta.ArticleTest)  Time elapsed: 0.004 sec  <<< FAILURE!
 org.junit.ComparisonFailure: expected:<[Author: Jussi Paananen
@@ -54,3 +55,6 @@ PAGES = {158--1...>
 	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcess(SurefireStarter.java:91)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:69)
 
+=======
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.04 sec
+>>>>>>> 520053b15da76cb86679e828bfa2d90493670edd

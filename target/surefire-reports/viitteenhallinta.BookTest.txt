@@ -2,7 +2,11 @@
 Test set: viitteenhallinta.BookTest
 -------------------------------------------------------------------------------
 <<<<<<< HEAD
+<<<<<<< HEAD
 Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 sec
 =======
 Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 sec
 >>>>>>> 520053b15da76cb86679e828bfa2d90493670edd
+=======
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 sec
+>>>>>>> a7e9069e9246bd09599c9586db7a5968c85ae7a2

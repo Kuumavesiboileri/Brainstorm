@@ -2,6 +2,7 @@
 Test set: viitteenhallinta.ArticleTest
 -------------------------------------------------------------------------------
 <<<<<<< HEAD
+<<<<<<< HEAD
 Tests run: 5, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.08 sec <<< FAILURE!
 testToLaTexString(viitteenhallinta.ArticleTest)  Time elapsed: 0.004 sec  <<< FAILURE!
 org.junit.ComparisonFailure: expected:<[Author: Jussi Paananen
@@ -58,3 +59,6 @@ PAGES = {158--1...>
 =======
 Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.04 sec
 >>>>>>> 520053b15da76cb86679e828bfa2d90493670edd
+=======
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.053 sec
+>>>>>>> a7e9069e9246bd09599c9586db7a5968c85ae7a2

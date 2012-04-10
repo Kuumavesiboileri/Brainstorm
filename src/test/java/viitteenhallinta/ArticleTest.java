@@ -29,8 +29,8 @@ public class ArticleTest {
     
     @Before
     public void setUp() {
-        artikkeli = new Article("Tagi", "Jussi Paananen", "Suomen MM -juhlimisen herättämästä pahennuksesta vuonna 2011 ja miten se peilaa nyky-yhteiskuntaamme", "Täysin turhia tieteellisiä artikkeleita", 2012, parseri);
         parseri = new Parser();
+        artikkeli = new Article("Tagi", "Jussi Paananen", "Suomen MM -juhlimisen herättämästä pahennuksesta vuonna 2011 ja miten se peilaa nyky-yhteiskuntaamme", "Täysin turhia tieteellisiä artikkeleita", 2012, parseri);
         oikeaRivi = "Author: Jussi Paananen"
                 + "\nTitle: Suomen MM -juhlimisen herättämästä pahennuksesta vuonna 2011 ja miten se peilaa nyky-yhteiskuntaamme"
                 + "\nJournal: Täysin turhia tieteellisiä artikkeleita"
@@ -85,13 +85,12 @@ public class ArticleTest {
         artikkeli.setNote("This is a note");
         artikkeli.setKey("This is a key");
         artikkeli.setVolume(1);
-        oikeaRivi += "@Book(Tagi,"
-                + "\nVOLUME = {1},"
+        oikeaRivi += "\nVOLUME = {1},"
                 + "\nNUMBER ={1},"
                 + "\nPAGES = {158--170},"
                 + "\nMONTH = {jan},"
                 + "\nNOTE = {This is a note},"
-                + "\nKEY = {This is a key},\n";
+                + "\nKEY = {This is a key},\n)";
         System.out.println(oikeaRivi);
         System.out.println(artikkeli.toLaTexString());
         assertEquals(oikeaRivi, artikkeli.toLaTexString());

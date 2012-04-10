@@ -59,7 +59,7 @@ public class Article implements Viite {
     }
 
     public String toLaTexString() {
-        String palauta = "@Book(" + tag + ",\n";
+        String palauta = "@Article(" + tag + ",\n";
         palauta += "AUTHOR = {" + parser.parse(author) + "},\n";
         palauta += "TITLE = {" + parser.parse(title) + "},\n";
         palauta += "JOURNAL = {" + parser.parse(journal) + "},\n";

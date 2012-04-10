@@ -1,14 +1,25 @@
 -------------------------------------------------------------------------------
 Test set: viitteenhallinta.ArticleTest
 -------------------------------------------------------------------------------
-<<<<<<< HEAD
-Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.056 sec
-=======
-Tests run: 5, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.064 sec <<< FAILURE!
-testToLaTexString(viitteenhallinta.ArticleTest)  Time elapsed: 0.003 sec  <<< ERROR!
-java.lang.NullPointerException
-	at viitteenhallinta.Article.toLaTexString(Article.java:63)
-	at viitteenhallinta.ArticleTest.testToLaTexString(ArticleTest.java:95)
+Tests run: 5, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.08 sec <<< FAILURE!
+testToLaTexString(viitteenhallinta.ArticleTest)  Time elapsed: 0.004 sec  <<< FAILURE!
+org.junit.ComparisonFailure: expected:<[Author: Jussi Paananen
+Title: Suomen MM -juhlimisen herättämästä pahennuksesta vuonna 2011 ja miten se peilaa nyky-yhteiskuntaamme
+Journal: Täysin turhia tieteellisiä artikkeleita
+Year: 2012
+VOLUME = {1},
+NUMBER =]{1},
+PAGES = {158--1...> but was:<[@Article(Tagi,
+AUTHOR = {Jussi Paananen},
+TITLE = {Suomen MM -juhlimisen herättämästä pahennuksesta vuonna 2011 ja miten se peilaa nyky-yhteiskuntaamme},
+JOURNAL = {Täysin turhia tieteellisiä artikkeleita},
+YEAR = {2012},
+VOLUME = {1},
+NUMBER = ]{1},
+PAGES = {158--1...>
+	at org.junit.Assert.assertEquals(Assert.java:125)
+	at org.junit.Assert.assertEquals(Assert.java:147)
+	at viitteenhallinta.ArticleTest.testToLaTexString(ArticleTest.java:96)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
@@ -43,4 +54,3 @@ java.lang.NullPointerException
 	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcess(SurefireStarter.java:91)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:69)
 
->>>>>>> f33e382463e62002b53bed7cc5776800bed41c7e

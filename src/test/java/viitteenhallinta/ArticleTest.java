@@ -93,7 +93,8 @@ public class ArticleTest {
                 + "\nNOTE = {This is a note},"
                 + "\nKEY = {This is a key},\n";
         System.out.println(oikeaRivi);
-        System.out.println(saatuRivi);
+        System.out.println(artikkeli.toLaTexString());
+        assertEquals(oikeaRivi, artikkeli.toLaTexString());
     }
     
 

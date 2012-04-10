@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
+<<<<<<< HEAD
 <testsuite failures="0" time="0.018" errors="0" skipped="0" tests="6" name="viitteenhallinta.BookTest">
+=======
+<testsuite failures="0" time="0.006" errors="0" skipped="0" tests="6" name="viitteenhallinta.BookTest">
+>>>>>>> f33e382463e62002b53bed7cc5776800bed41c7e
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/usr/lib/jvm/java-6-sun-1.6.0.26/jre/lib/amd64"/>
@@ -19,7 +23,11 @@
     <property name="basedir" value="/fs-2/e/todjalka/NetBeansProjects/Viitteenhallinta"/>
     <property name="java.endorsed.dirs" value="/usr/lib/jvm/java-6-sun-1.6.0.26/jre/lib/endorsed"/>
     <property name="os.arch" value="amd64"/>
+<<<<<<< HEAD
     <property name="surefire.real.class.path" value="/fs-2/e/todjalka/NetBeansProjects/Viitteenhallinta/target/surefire/surefirebooter2352452133559860967.jar"/>
+=======
+    <property name="surefire.real.class.path" value="/fs-0/8/atteaalt/NetBeansProjects/viitteenhallinta/target/surefire/surefirebooter5480635394108728414.jar"/>
+>>>>>>> f33e382463e62002b53bed7cc5776800bed41c7e
     <property name="java.io.tmpdir" value="/tmp"/>
     <property name="line.separator" value="
 "/>
@@ -42,7 +50,11 @@
     <property name="java.vm.specification.version" value="1.0"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="java.home" value="/usr/lib/jvm/java-6-sun-1.6.0.26/jre"/>
+<<<<<<< HEAD
     <property name="sun.java.command" value="/fs-2/e/todjalka/NetBeansProjects/Viitteenhallinta/target/surefire/surefirebooter2352452133559860967.jar /fs-2/e/todjalka/NetBeansProjects/Viitteenhallinta/target/surefire/surefire7694576744525244640tmp /fs-2/e/todjalka/NetBeansProjects/Viitteenhallinta/target/surefire/surefire6173271194807150958tmp"/>
+=======
+    <property name="sun.java.command" value="/fs-0/8/atteaalt/NetBeansProjects/viitteenhallinta/target/surefire/surefirebooter5480635394108728414.jar /fs-0/8/atteaalt/NetBeansProjects/viitteenhallinta/target/surefire/surefire226574610742833241tmp /fs-0/8/atteaalt/NetBeansProjects/viitteenhallinta/target/surefire/surefire7808955660819175394tmp"/>
+>>>>>>> f33e382463e62002b53bed7cc5776800bed41c7e
     <property name="java.specification.vendor" value="Sun Microsystems Inc."/>
     <property name="user.language" value="fi"/>
     <property name="java.vm.info" value="mixed mode"/>
@@ -63,5 +75,5 @@
   <testcase time="0.001" classname="viitteenhallinta.BookTest" name="testSetSeries"/>
   <testcase time="0" classname="viitteenhallinta.BookTest" name="testWithMultipleSetters"/>
   <testcase time="0" classname="viitteenhallinta.BookTest" name="anotherTestWithMultipleSetters"/>
-  <testcase time="0" classname="viitteenhallinta.BookTest" name="testToLaTexStringWithOptionals"/>
+  <testcase time="0.001" classname="viitteenhallinta.BookTest" name="testToLaTexStringWithOptionals"/>
 </testsuite>

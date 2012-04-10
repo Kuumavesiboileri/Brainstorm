@@ -118,8 +118,7 @@ public class Article implements Viite {
             palautettava += "NOTE = {" + parser.parse(note) + "},\n";
         }
         if (key != null) {
-            palautettava += "KEY"
-                    + " = {" + parser.parse(key) + "},\n";
+            palautettava += "KEY = {" + parser.parse(key) + "},\n";
         }
         return palautettava;
     }

@@ -75,7 +75,7 @@ YEAR = 1978,
 ADDRESS = "Cambridge, MA",
 ) */
     public String toLaTexString() {
-        String palauta = "@Book(" + tag + ",\n";
+        String palauta = "@Book(" + parser.parse(tag) + ",\n";
         palauta += "AUTHOR = {" + parser.parse(author) + "},\n";
         palauta += "TITLE = {" + parser.parse(title) + "},\n";
         palauta += "PUBLISHER = {" + parser.parse(publisher) + "},\n";

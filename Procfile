@@ -1,2 +1,2 @@
-web:    java -cp target/classes:target/dependency/* webRef
+web:    java -cp target/classes:target/dependency/*
 

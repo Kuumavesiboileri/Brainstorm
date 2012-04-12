@@ -1,2 +1,1 @@
-web:    java -cp target/classes:target/dependency/*
-
+java -jar target/dependency/jetty-runner.jar target/*.war

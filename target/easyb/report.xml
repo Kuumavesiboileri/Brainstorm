@@ -1,0 +1,18 @@
+<easyb time='Thu Apr 12 10:32:40 EEST 2012' totalbehaviors='2' totalfailedbehaviors='0' totalpendingbehaviors='0' executionTime='2180'>
+  <stories scenarios='2' failedscenarios='0' pendingscenarios='0' executionTime='2180'>
+    <story name='add_new_book' scenarios='2' failedscenarios='0' pendingscenarios='0' executionTime='2180'>
+      <description name='User can log in with valid username/password-combination' />
+      <scenario name='user can add a new book' result='success' executionTime='1744'>
+        <given name='user is on home page' result='success' />
+        <when name='a required fields are given' result='success' />
+        <then name='new book has been added' result='success' />
+      </scenario>
+      <scenario name='user can add a new article' result='success' executionTime='79'>
+        <given name='user is on home page' result='success' />
+        <when name='a required fields are given' result='success' />
+        <then name='new article has been added' result='success' />
+      </scenario>
+    </story>
+  </stories>
+  <specifications specifications='0' failedspecifications='0' pendingspecifications='0' executionTime='0' />
+</easyb>

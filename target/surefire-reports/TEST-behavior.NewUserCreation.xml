@@ -1,0 +1,146 @@
+<testsuite tests='6' results='0' failures='6' disabled='0' errors='0' time='2.818' name='behavior.new_user_creation'>
+  <testcase classname='behavior.new_user_creation' name='creation succesfull with correct username and password' time='0.456'>
+    <failure message='Step "command new user is selected" -- No link found with text: register new user
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;2.13.0&apos;, revision: &apos;14794&apos;, time: &apos;2011-11-18 17:49:47&apos;
+System info: os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;2.6.38-13-generic&apos;, java.version: &apos;1.6.0_26&apos;
+Driver info: driver.version: HtmlUnitDriver; Step "a valid username and password are entered" -- Unable to locate element with name: username
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;2.13.0&apos;, revision: &apos;14794&apos;, time: &apos;2011-11-18 17:49:47&apos;
+System info: os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;2.6.38-13-generic&apos;, java.version: &apos;1.6.0_26&apos;
+Driver info: driver.version: HtmlUnitDriver; Step "new user is registered to system" -- expected true but was false'>Step "command new user is selected" -- No link found with text: register new user
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.13.0', revision: '14794', time: '2011-11-18 17:49:47'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '2.6.38-13-generic', java.version: '1.6.0_26'
+Driver info: driver.version: HtmlUnitDriver; Step "a valid username and password are entered" -- Unable to locate element with name: username
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.13.0', revision: '14794', time: '2011-11-18 17:49:47'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '2.6.38-13-generic', java.version: '1.6.0_26'
+Driver info: driver.version: HtmlUnitDriver; Step "new user is registered to system" -- expected true but was false
+
+    scenario creation succesfull with correct username and password
+      given command new user is selected
+      when a valid username and password are entered
+      then new user is registered to system</failure>
+  </testcase>
+  <testcase classname='behavior.new_user_creation' name='can login with succesfully generated account' time='0.435'>
+    <failure message='Step "command new user is selected" -- No link found with text: register new user
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;2.13.0&apos;, revision: &apos;14794&apos;, time: &apos;2011-11-18 17:49:47&apos;
+System info: os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;2.6.38-13-generic&apos;, java.version: &apos;1.6.0_26&apos;
+Driver info: driver.version: HtmlUnitDriver; Step "a valid username and password are entered" -- Unable to locate element with name: username
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;2.13.0&apos;, revision: &apos;14794&apos;, time: &apos;2011-11-18 17:49:47&apos;
+System info: os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;2.6.38-13-generic&apos;, java.version: &apos;1.6.0_26&apos;
+Driver info: driver.version: HtmlUnitDriver; Step "new credentials allow logging in to system" -- expected true but was false'>Step "command new user is selected" -- No link found with text: register new user
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.13.0', revision: '14794', time: '2011-11-18 17:49:47'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '2.6.38-13-generic', java.version: '1.6.0_26'
+Driver info: driver.version: HtmlUnitDriver; Step "a valid username and password are entered" -- Unable to locate element with name: username
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.13.0', revision: '14794', time: '2011-11-18 17:49:47'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '2.6.38-13-generic', java.version: '1.6.0_26'
+Driver info: driver.version: HtmlUnitDriver; Step "new credentials allow logging in to system" -- expected true but was false
+
+    scenario can login with succesfully generated account
+      given command new user is selected
+      when a valid username and password are entered
+      then new credentials allow logging in to system</failure>
+  </testcase>
+  <testcase classname='behavior.new_user_creation' name='creation fails with correct username and too short password' time='0.443'>
+    <failure message='Step "command new user is selected" -- No link found with text: register new user
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;2.13.0&apos;, revision: &apos;14794&apos;, time: &apos;2011-11-18 17:49:47&apos;
+System info: os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;2.6.38-13-generic&apos;, java.version: &apos;1.6.0_26&apos;
+Driver info: driver.version: HtmlUnitDriver; Step "a valid username and too short password are entered" -- Unable to locate element with name: username
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;2.13.0&apos;, revision: &apos;14794&apos;, time: &apos;2011-11-18 17:49:47&apos;
+System info: os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;2.6.38-13-generic&apos;, java.version: &apos;1.6.0_26&apos;
+Driver info: driver.version: HtmlUnitDriver; Step "new user is not be registered to system" -- expected true but was false'>Step "command new user is selected" -- No link found with text: register new user
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.13.0', revision: '14794', time: '2011-11-18 17:49:47'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '2.6.38-13-generic', java.version: '1.6.0_26'
+Driver info: driver.version: HtmlUnitDriver; Step "a valid username and too short password are entered" -- Unable to locate element with name: username
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.13.0', revision: '14794', time: '2011-11-18 17:49:47'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '2.6.38-13-generic', java.version: '1.6.0_26'
+Driver info: driver.version: HtmlUnitDriver; Step "new user is not be registered to system" -- expected true but was false
+
+    scenario creation fails with correct username and too short password
+      given command new user is selected
+      when a valid username and too short password are entered
+      then new user is not be registered to system</failure>
+  </testcase>
+  <testcase classname='behavior.new_user_creation' name='creation fails with correct username and pasword consisting of letters' time='0.441'>
+    <failure message='Step "command new user is selected" -- No link found with text: register new user
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;2.13.0&apos;, revision: &apos;14794&apos;, time: &apos;2011-11-18 17:49:47&apos;
+System info: os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;2.6.38-13-generic&apos;, java.version: &apos;1.6.0_26&apos;
+Driver info: driver.version: HtmlUnitDriver; Step "a valid username and password consisting of letters are entered" -- Unable to locate element with name: username
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;2.13.0&apos;, revision: &apos;14794&apos;, time: &apos;2011-11-18 17:49:47&apos;
+System info: os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;2.6.38-13-generic&apos;, java.version: &apos;1.6.0_26&apos;
+Driver info: driver.version: HtmlUnitDriver; Step "new user is not be registered to system" -- expected true but was false'>Step "command new user is selected" -- No link found with text: register new user
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.13.0', revision: '14794', time: '2011-11-18 17:49:47'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '2.6.38-13-generic', java.version: '1.6.0_26'
+Driver info: driver.version: HtmlUnitDriver; Step "a valid username and password consisting of letters are entered" -- Unable to locate element with name: username
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.13.0', revision: '14794', time: '2011-11-18 17:49:47'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '2.6.38-13-generic', java.version: '1.6.0_26'
+Driver info: driver.version: HtmlUnitDriver; Step "new user is not be registered to system" -- expected true but was false
+
+    scenario creation fails with correct username and pasword consisting of letters
+      given command new user is selected
+      when a valid username and password consisting of letters are entered
+      then new user is not be registered to system</failure>
+  </testcase>
+  <testcase classname='behavior.new_user_creation' name='creation fails with too short username and valid pasword' time='0.444'>
+    <failure message='Step "command new user is selected" -- No link found with text: register new user
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;2.13.0&apos;, revision: &apos;14794&apos;, time: &apos;2011-11-18 17:49:47&apos;
+System info: os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;2.6.38-13-generic&apos;, java.version: &apos;1.6.0_26&apos;
+Driver info: driver.version: HtmlUnitDriver; Step "a too sort username and valid password are entered" -- Unable to locate element with name: username
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;2.13.0&apos;, revision: &apos;14794&apos;, time: &apos;2011-11-18 17:49:47&apos;
+System info: os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;2.6.38-13-generic&apos;, java.version: &apos;1.6.0_26&apos;
+Driver info: driver.version: HtmlUnitDriver; Step "new user is not be registered to system" -- expected true but was false'>Step "command new user is selected" -- No link found with text: register new user
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.13.0', revision: '14794', time: '2011-11-18 17:49:47'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '2.6.38-13-generic', java.version: '1.6.0_26'
+Driver info: driver.version: HtmlUnitDriver; Step "a too sort username and valid password are entered" -- Unable to locate element with name: username
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.13.0', revision: '14794', time: '2011-11-18 17:49:47'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '2.6.38-13-generic', java.version: '1.6.0_26'
+Driver info: driver.version: HtmlUnitDriver; Step "new user is not be registered to system" -- expected true but was false
+
+    scenario creation fails with too short username and valid pasword
+      given command new user is selected
+      when a too sort username and valid password are entered
+      then new user is not be registered to system</failure>
+  </testcase>
+  <testcase classname='behavior.new_user_creation' name='creation fails with already taken username and valid pasword' time='0.434'>
+    <failure message='Step "command new user is selected" -- No link found with text: register new user
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;2.13.0&apos;, revision: &apos;14794&apos;, time: &apos;2011-11-18 17:49:47&apos;
+System info: os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;2.6.38-13-generic&apos;, java.version: &apos;1.6.0_26&apos;
+Driver info: driver.version: HtmlUnitDriver; Step "a already taken username and valid password are entered" -- Unable to locate element with name: username
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;2.13.0&apos;, revision: &apos;14794&apos;, time: &apos;2011-11-18 17:49:47&apos;
+System info: os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;2.6.38-13-generic&apos;, java.version: &apos;1.6.0_26&apos;
+Driver info: driver.version: HtmlUnitDriver; Step "new user is not be registered to system" -- expected true but was false'>Step "command new user is selected" -- No link found with text: register new user
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.13.0', revision: '14794', time: '2011-11-18 17:49:47'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '2.6.38-13-generic', java.version: '1.6.0_26'
+Driver info: driver.version: HtmlUnitDriver; Step "a already taken username and valid password are entered" -- Unable to locate element with name: username
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.13.0', revision: '14794', time: '2011-11-18 17:49:47'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '2.6.38-13-generic', java.version: '1.6.0_26'
+Driver info: driver.version: HtmlUnitDriver; Step "new user is not be registered to system" -- expected true but was false
+
+    scenario creation fails with already taken username and valid pasword
+      given command new user is selected
+      when a already taken username and valid password are entered
+      then new user is not be registered to system</failure>
+  </testcase>
+</testsuite>

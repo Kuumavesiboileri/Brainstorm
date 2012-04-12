@@ -35,7 +35,7 @@
                     <label>note:</label>
                     <textarea rows="10" cols="50" name="note"></textarea> <br>                    
                     <label>volume:</label>
-                    <input type="text" value="0"name="volume" />
+                    <input type="text" value="0" name="volume" />
                     <label>series:</label>
                     <input type="text" name="series"/>
                     <label>address:</label>
@@ -72,7 +72,7 @@
                     <label>note:</label>
                     <textarea rows="10" cols="50" name="note"></textarea> <br>                    
                     <label>volume:</label>
-                    <input value="0" type="text" value="0" name="volume" />
+                    <input type="text" value="0" name="volume" />
                     <label>number:</label>
                     <input value="0" type="text" name="number"/>
                     <label>pages:</label>

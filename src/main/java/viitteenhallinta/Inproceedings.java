@@ -49,11 +49,11 @@ public class Inproceedings implements Viite {
         this.series = series;
     }
 
-    public void setAddress(String pages) {
+    public void setPages(String pages) {
         this.pages = pages;
     }
 
-    public void setEdition(String address) {
+    public void setAddress(String address) {
         this.address = address;
     }
 
@@ -78,7 +78,7 @@ public class Inproceedings implements Viite {
     }
 
     public String toLaTexString() {
-        String palauta = "@Book(" + tag + ",\n";
+        String palauta = "@InProceedings(" + tag + ",\n";
         palauta += "AUTHOR = {" + parser.parse(author) + "},\n";
         palauta += "TITLE = {" + parser.parse(title) + "},\n";
         palauta += "BOOKTITLE = {" + parser.parse(booktitle) + "},\n";

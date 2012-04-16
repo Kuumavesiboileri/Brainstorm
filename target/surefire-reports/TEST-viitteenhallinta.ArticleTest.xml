@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite failures="0" time="0.142" errors="0" skipped="0" tests="6" name="viitteenhallinta.ArticleTest">
+<testsuite failures="0" time="0.037" errors="0" skipped="0" tests="6" name="viitteenhallinta.ArticleTest">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/usr/lib/jvm/java-6-sun-1.6.0.26/jre/lib/amd64"/>
@@ -13,13 +13,13 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.os.patch.level" value="unknown"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="user.dir" value="/fs-2/e/todjalka/NetBeansProjects/Viitteenhallinta"/>
+    <property name="user.dir" value="/cs/fs/home/atteaalt/NetBeansProjects/Viitteenhallinta"/>
     <property name="java.runtime.version" value="1.6.0_26-b03"/>
     <property name="java.awt.graphicsenv" value="sun.awt.X11GraphicsEnvironment"/>
-    <property name="basedir" value="/fs-2/e/todjalka/NetBeansProjects/Viitteenhallinta"/>
+    <property name="basedir" value="/cs/fs/home/atteaalt/NetBeansProjects/Viitteenhallinta"/>
     <property name="java.endorsed.dirs" value="/usr/lib/jvm/java-6-sun-1.6.0.26/jre/lib/endorsed"/>
     <property name="os.arch" value="amd64"/>
-    <property name="surefire.real.class.path" value="/fs-2/e/todjalka/NetBeansProjects/Viitteenhallinta/target/surefire/surefirebooter2636507483724448564.jar"/>
+    <property name="surefire.real.class.path" value="/tmp/surefirebooter1289274642910719489.jar"/>
     <property name="java.io.tmpdir" value="/tmp"/>
     <property name="line.separator" value="
 "/>
@@ -27,22 +27,22 @@
     <property name="os.name" value="Linux"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
     <property name="java.library.path" value="/usr/lib/jvm/java-6-sun-1.6.0.26/jre/lib/amd64/server:/usr/lib/jvm/java-6-sun-1.6.0.26/jre/lib/amd64:/usr/lib/jvm/java-6-sun-1.6.0.26/jre/../lib/amd64:/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib"/>
-    <property name="surefire.test.class.path" value="/fs-2/e/todjalka/NetBeansProjects/Viitteenhallinta/target/test-classes:/fs-2/e/todjalka/NetBeansProjects/Viitteenhallinta/target/classes:/fs-2/e/todjalka/.m2/repository/junit/junit/4.10/junit-4.10.jar:/fs-2/e/todjalka/.m2/repository/org/hamcrest/hamcrest-core/1.1/hamcrest-core-1.1.jar:"/>
+    <property name="surefire.test.class.path" value="/cs/fs/home/atteaalt/NetBeansProjects/Viitteenhallinta/target/test-classes:/cs/fs/home/atteaalt/NetBeansProjects/Viitteenhallinta/target/generated-classes/cobertura:/cs/fs/home/atteaalt/.m2/repository/junit/junit/4.10/junit-4.10.jar:/cs/fs/home/atteaalt/.m2/repository/org/hamcrest/hamcrest-core/1.1/hamcrest-core-1.1.jar:/cs/fs/home/atteaalt/.m2/repository/net/sourceforge/cobertura/cobertura/1.9.4.1/cobertura-1.9.4.1.jar:/cs/fs/home/atteaalt/.m2/repository/org/apache/ant/ant/1.7.0/ant-1.7.0.jar:/cs/fs/home/atteaalt/.m2/repository/org/apache/ant/ant-launcher/1.7.0/ant-launcher-1.7.0.jar:"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.class.version" value="50.0"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
-    <property name="os.version" value="2.6.38-13-generic"/>
-    <property name="user.home" value="/fs-2/e/todjalka"/>
+    <property name="os.version" value="2.6.38-14-generic"/>
+    <property name="user.home" value="/cs/fs/home/atteaalt"/>
     <property name="user.timezone" value=""/>
     <property name="java.awt.printerjob" value="sun.print.PSPrinterJob"/>
     <property name="file.encoding" value="UTF-8"/>
     <property name="java.specification.version" value="1.6"/>
-    <property name="user.name" value="todjalka"/>
-    <property name="java.class.path" value="/fs-2/e/todjalka/NetBeansProjects/Viitteenhallinta/target/test-classes:/fs-2/e/todjalka/NetBeansProjects/Viitteenhallinta/target/classes:/fs-2/e/todjalka/.m2/repository/junit/junit/4.10/junit-4.10.jar:/fs-2/e/todjalka/.m2/repository/org/hamcrest/hamcrest-core/1.1/hamcrest-core-1.1.jar:"/>
+    <property name="user.name" value="atteaalt"/>
+    <property name="java.class.path" value="/cs/fs/home/atteaalt/NetBeansProjects/Viitteenhallinta/target/test-classes:/cs/fs/home/atteaalt/NetBeansProjects/Viitteenhallinta/target/generated-classes/cobertura:/cs/fs/home/atteaalt/.m2/repository/junit/junit/4.10/junit-4.10.jar:/cs/fs/home/atteaalt/.m2/repository/org/hamcrest/hamcrest-core/1.1/hamcrest-core-1.1.jar:/cs/fs/home/atteaalt/.m2/repository/net/sourceforge/cobertura/cobertura/1.9.4.1/cobertura-1.9.4.1.jar:/cs/fs/home/atteaalt/.m2/repository/org/apache/ant/ant/1.7.0/ant-1.7.0.jar:/cs/fs/home/atteaalt/.m2/repository/org/apache/ant/ant-launcher/1.7.0/ant-launcher-1.7.0.jar:"/>
     <property name="java.vm.specification.version" value="1.0"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="java.home" value="/usr/lib/jvm/java-6-sun-1.6.0.26/jre"/>
-    <property name="sun.java.command" value="/fs-2/e/todjalka/NetBeansProjects/Viitteenhallinta/target/surefire/surefirebooter2636507483724448564.jar /fs-2/e/todjalka/NetBeansProjects/Viitteenhallinta/target/surefire/surefire3667043507250562359tmp /fs-2/e/todjalka/NetBeansProjects/Viitteenhallinta/target/surefire/surefire8570478917615947478tmp"/>
+    <property name="sun.java.command" value="/tmp/surefirebooter1289274642910719489.jar /tmp/surefire8689971883774815778tmp /tmp/surefire6743856824416318260tmp"/>
     <property name="java.specification.vendor" value="Sun Microsystems Inc."/>
     <property name="user.language" value="fi"/>
     <property name="java.vm.info" value="mixed mode"/>
@@ -50,7 +50,7 @@
     <property name="java.ext.dirs" value="/usr/lib/jvm/java-6-sun-1.6.0.26/jre/lib/ext:/usr/java/packages/lib/ext"/>
     <property name="sun.boot.class.path" value="/usr/lib/jvm/java-6-sun-1.6.0.26/jre/lib/resources.jar:/usr/lib/jvm/java-6-sun-1.6.0.26/jre/lib/rt.jar:/usr/lib/jvm/java-6-sun-1.6.0.26/jre/lib/sunrsasign.jar:/usr/lib/jvm/java-6-sun-1.6.0.26/jre/lib/jsse.jar:/usr/lib/jvm/java-6-sun-1.6.0.26/jre/lib/jce.jar:/usr/lib/jvm/java-6-sun-1.6.0.26/jre/lib/charsets.jar:/usr/lib/jvm/java-6-sun-1.6.0.26/jre/lib/modules/jdk.boot.jar:/usr/lib/jvm/java-6-sun-1.6.0.26/jre/classes"/>
     <property name="java.vendor" value="Sun Microsystems Inc."/>
-    <property name="localRepository" value="/fs-2/e/todjalka/.m2/repository"/>
+    <property name="localRepository" value="/cs/fs/home/atteaalt/.m2/repository"/>
     <property name="file.separator" value="/"/>
     <property name="java.vendor.url.bug" value="http://java.sun.com/cgi-bin/bugreport.cgi"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -58,10 +58,10 @@
     <property name="sun.desktop" value="gnome"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase time="0.002" classname="viitteenhallinta.ArticleTest" name="constructorWorks"/>
-  <testcase time="0" classname="viitteenhallinta.ArticleTest" name="testSetVolume"/>
+  <testcase time="0.001" classname="viitteenhallinta.ArticleTest" name="testSetVolume"/>
+  <testcase time="0" classname="viitteenhallinta.ArticleTest" name="constructorWorks"/>
   <testcase time="0" classname="viitteenhallinta.ArticleTest" name="testSetVolumeAndPages"/>
-  <testcase time="0" classname="viitteenhallinta.ArticleTest" name="testWithAllSetters"/>
-  <testcase time="0" classname="viitteenhallinta.ArticleTest" name="testToLaTexStringWithCompulsoryVariables"/>
-  <testcase time="0" classname="viitteenhallinta.ArticleTest" name="testToLaTexStringWithAllVariables"/>
+  <testcase time="0.001" classname="viitteenhallinta.ArticleTest" name="testWithAllSetters"/>
+  <testcase time="0.022" classname="viitteenhallinta.ArticleTest" name="testToLaTexStringWithCompulsoryVariables"/>
+  <testcase time="0.005" classname="viitteenhallinta.ArticleTest" name="testToLaTexStringWithAllVariables"/>
 </testsuite>

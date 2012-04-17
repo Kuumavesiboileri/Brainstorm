@@ -8,6 +8,7 @@ package webref.domain;
  *
  * @author todjalka
  */
+
 public interface Viite {
     String toLaTexString();
     String toReadableString();

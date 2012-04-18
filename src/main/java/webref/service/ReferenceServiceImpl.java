@@ -4,12 +4,15 @@
  */
 package webref.service;
 
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import webref.database.RefRepository;
 import webref.domain.DatabRef;
+import webref.domain.Viite;
 
 /**
  *
@@ -30,6 +33,17 @@ public class ReferenceServiceImpl implements ReferenceService {
     @Override
     public List<DatabRef> list() {
         return repo.findAll();
+    }
+
+    @Override
+    public String getAllReferences() {
+        List<DatabRef> refList = list();
+        String references = "";
+        for (Iterator<DatabRef> it = refList.iterator(); it.hasNext();) {
+            DatabRef r = it.next();
+            references += r.dataObjectToViite().toLaTexString()+"\n";
+        }
+        return references;
     }
     
 }

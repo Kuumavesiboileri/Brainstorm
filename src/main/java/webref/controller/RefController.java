@@ -4,15 +4,21 @@
  */
 package webref.controller;
 
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.List;
+import javax.servlet.ServletContext;
+import javax.servlet.ServletOutputStream;
+import javax.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import webref.domain.Article;
-import webref.domain.Book;
 import webref.domain.DatabRef;
+import webref.domain.Viite;
 import webref.service.ReferenceService;
 
 /**
@@ -35,8 +41,40 @@ public class RefController {
         return "home";
     }
     @RequestMapping(value="addRef", method=RequestMethod.POST)
-    public String addBook(Model model, @ModelAttribute DatabRef ref) {
+    public String addReference(Model model, @ModelAttribute DatabRef ref) {
+        
         refService.create(ref);
         return "redirect:/";
     }
+     @RequestMapping(value="bibtex", method=RequestMethod.GET)
+    public String getBibtex(Model model, HttpServletResponse response ) throws IOException {
+         response.setContentType("application/octet-stream");
+         response.setHeader("Content-Disposition","attachment;filename=bibtex.bib");
+        StringBuilder sb = new StringBuilder(refService.getAllReferences());
+        InputStream in = new ByteArrayInputStream(sb.toString().getBytes("UTF-8"));
+        ServletOutputStream out = response.getOutputStream();
+        byte[] outputByte = new byte[4096];
+        //copy binary contect to output stream
+        while(in.read(outputByte, 0, 4096) != -1)
+        {
+                out.write(outputByte, 0, 4096);
+        }
+        in.close();
+        out.flush();
+        out.close();
+        return "redirect:/";
+    }
 }
+/*StringBuffer sb = new StringBuffer("whatever string you like");
+InputStream in = new ByteArrayInputStream(sb.toString().getBytes("UTF-8"));
+ServletOutputStream out = response.getOutputStream();
+ 
+byte[] outputByte = new byte[4096];
+//copy binary contect to output stream
+while(in.read(outputByte, 0, 4096) != -1)
+{
+	out.write(outputByte, 0, 4096);
+}
+in.close();
+out.flush();
+out.close();*/

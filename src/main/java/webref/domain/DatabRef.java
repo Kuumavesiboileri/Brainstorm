@@ -41,6 +41,7 @@ public class DatabRef implements Serializable {
      * Required fields: author, title, booktitle, year
      * Optional fields: editor, volume, series, pages, address, month, organization, publisher, note, key
     */
+    private String type;
     private String tag;
     private String author;
     private String title;
@@ -63,14 +64,26 @@ public class DatabRef implements Serializable {
     private String editor;
     private String organization;
     
-    public Book dataObjectToBook() {
-        Book book = new Book(tag, author, title, book_publisher, ref_year, new Parser());
+    public Viite dataObjectToViite() {
+        if(type.equals("book")) {
+            Book book = new Book(tag, author, title, book_publisher, ref_year, new Parser());
         return book;
-    }
-    public Article dataObjectToArticle() {
-        Article article = new Article(tag, author, title, journal, ref_year, new Parser());
+        }
+        else if(type.equals("article")) {
+            Article article = new Article(tag, author, title, journal, ref_year, new Parser());
         return article;
+        }
+        else if(type.equals("inproceeding")) {
+            return null;
+        }
+        else return null;
+        
     }
+
+    public String getType() {
+        return type;
+    }
+    
         
 
     public String getAddress() {
@@ -139,6 +152,11 @@ public class DatabRef implements Serializable {
     public String getOrganization() {
         return organization;
     }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+    
     
     public void setAddress(String address) {
         this.address = address;

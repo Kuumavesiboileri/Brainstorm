@@ -6,6 +6,7 @@ package webref.service;
 
 import java.util.List;
 import webref.domain.DatabRef;
+import webref.domain.Viite;
 
 /**
  *
@@ -15,5 +16,7 @@ public interface ReferenceService {
     
     void create(DatabRef ref);
     List<DatabRef> list();
+
+    public String getAllReferences();
     
 }

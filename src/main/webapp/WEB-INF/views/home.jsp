@@ -46,6 +46,11 @@
             function setButtonText(className) {
                 var button = document.getElementById('submit');
                 button.setAttribute('value', 'add new '+className);
+                setReferenceType(className);
+            }
+            function setReferenceType(type) {
+                var input = document.getElementById('type');
+                input.setAttribute("value", type);
             }
             
         </script>
@@ -125,20 +130,22 @@
                     <input class="inproceeding" type="text" name="organization" />
                     <label>key:</label>
                     <input type="text" name="ref_key" />
+                    <input id="type" type="hidden" value="article" name="type"/>
                 </fieldset>
                 <input id="submit" type="submit" value="add new article" />
             </form>
         </div>
         <div style="border-style: solid;border-width: thin; border-color:silver; background-color: whitesmoke; margin-bottom: 10px">
         <h2>References</h2>
+        <form method="GET"><button type="submit" formaction="bibtex">download bibTex</button></form>
         
-        <button>download bibTex</button>
                 
         choose all to bibTex file<input id="select-all" type="checkbox" name="bib" onclick="selectAll()" />
         <table border="1" style="width: 100%">
             <thead>
                 <tr>
                     <th>choose to bibTex file</th>
+                    <th>type</th>
                     <th>author</th>
                     <th>title</th>
                     <th>booktitle</th>
@@ -162,6 +169,7 @@
             <c:forEach var="ref" items="${references}">
                 <tr>
                     <td><input class="checkToBib" type="checkbox" name="bib" onclick="selectSome()"/></td>
+                    <td>${ref.type}</td>
                     <td>${ref.author}</td>
                     <td>${ref.title}</td>
                     <td>${ref.booktitle}</td>

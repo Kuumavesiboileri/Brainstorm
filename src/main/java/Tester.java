@@ -23,7 +23,9 @@ public class Tester {
         driver.get(url);
         WebElement dropDownListBox = driver.findElement(By.id("selection"));
         Select clickThis = new Select(dropDownListBox);
-        clickThis.selectByValue("Article");        
+        clickThis.selectByValue("Article");
+        
+        // add new book
          
         WebElement element = driver.findElement(By.id("tag"));
         element.sendKeys("tagi2");
@@ -41,7 +43,28 @@ public class Tester {
         element.sendKeys("2012");
 
         element = driver.findElement(By.id("submit"));
+        element.click();
+        
+        //add new article
+        dropDownListBox = driver.findElement(By.id("selection"));
+        clickThis = new Select(dropDownListBox);
+        clickThis.selectByValue("Book");
+        element = driver.findElement(By.id("tag"));
+        element.sendKeys("tagi1");
+        
+        element = driver.findElement(By.id("author"));
+        element.sendKeys("Pertti Kananen");
+
+        element = driver.findElement(By.id("title"));
+        element.sendKeys("Ergonomisten hammastikkujen historia ja vaikutus talouspolitiikaan 1800 -luvun Ruotsi-Suomessa");
+        
+        element = driver.findElement(By.id("book-publisher"));
+        element.sendKeys("WSOY");
+        
+        element = driver.findElement(By.id("year"));
+        element.sendKeys("1995");
+
+        element = driver.findElement(By.id("submit"));
         element.click(); 
-         System.out.print(driver.getPageSource());
     }
 }

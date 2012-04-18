@@ -15,19 +15,19 @@
                 var selection = document.getElementById('selection');
                 if(selection.selectedIndex==0) {
                     selectFieldsToHide('book');
-                    selectFieldsToHide('inproceeding');
+                    selectFieldsToHide('inproceedings');
                     selectFieldsToShow('article');
                     
                 }
                 else if(selection.selectedIndex==1) {
                     selectFieldsToHide('article');
-                    selectFieldsToHide('inproceeding');
+                    selectFieldsToHide('inproceedings');
                     selectFieldsToShow('book');
                 }
                 else if(selection.selectedIndex==2) {
                     selectFieldsToHide('article');
                     selectFieldsToHide('book');
-                    selectFieldsToShow('inproceeding');
+                    selectFieldsToShow('inproceedings');
                 }
             }
             function selectFieldsToHide(className) {
@@ -86,7 +86,6 @@
                 <option value="Inproceeding">Inproceedings</option>
             </select>
             <form id="ref-form" action="addRef" method="POST">
-                <h3>New book reference</h3>
                 <fieldset>
                     <legend>Required fields</legend>
                     <label>tag:</label>
@@ -95,8 +94,8 @@
                     <input id="author" type="text" name="author"/>
                     <label>title:</label>
                     <input id="title" type="text" name="title">
-                    <label class="inproceeding" >booktitle:</label>
-                    <input class="inproceeding" id="booktitle" type="text" name="booktitle">
+                    <label class="inproceedings" >booktitle:</label>
+                    <input class="inproceedings" id="booktitle" type="text" name="booktitle">
                     <label class="book" >publisher:</label> 
                     <input class="book" id="book-publisher" type="text" name="book_publisher" />
                     <label class="article">journal:</label>
@@ -108,8 +107,8 @@
                     <legend>Optional fields</legend>
                     <label>note:</label>
                     <textarea rows="10" cols="50" name="note"></textarea> <br>
-                    <label class="inproceeding">editor:</label>
-                    <input class="inproceeding" type="text" name="editor"/>
+                    <label class="inproceedings">editor:</label>
+                    <input class="inproceedings" type="text" name="editor"/>
                     <label>volume:</label>
                     <input type="text" value="0" name="volume" />
                     <label class="article" >number:</label>
@@ -124,10 +123,10 @@
                     <input type="text" name="edition" />
                     <label>month:</label>
                     <input type="text" name="ref_month" />
-                    <label class="inproceeding">publisher:</label>
-                    <input class="inproceeding" id="inpro-publisher" type="text" name="inpro_publisher" /><br>
-                    <label class="inproceeding" >organization:</label>
-                    <input class="inproceeding" type="text" name="organization" />
+                    <label class="inproceedings">publisher:</label>
+                    <input class="inproceedings" id="inpro-publisher" type="text" name="inpro_publisher" /><br>
+                    <label class="inproceedings" >organization:</label>
+                    <input class="inproceedings" type="text" name="organization" />
                     <label>key:</label>
                     <input type="text" name="ref_key" />
                     <input id="type" type="hidden" value="article" name="type"/>
@@ -193,7 +192,7 @@
         </div>
         <script>
             selectFieldsToHide('book');
-            selectFieldsToHide('inproceeding');
+            selectFieldsToHide('inproceedings');
         </script>
     </body>
 </html>

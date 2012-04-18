@@ -9,6 +9,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import viitteenhallinta.Inproceedings;
 
 /**
  *
@@ -73,8 +74,9 @@ public class DatabRef implements Serializable {
             Article article = new Article(tag, author, title, journal, ref_year, new Parser());
         return article;
         }
-        else if(type.equals("inproceeding")) {
-            return null;
+        else if(type.equals("inproceedings")) {
+            Inproceedings inproceeding = new Inproceedings(tag, author, title, booktitle, ref_year, new Parser());
+            return inproceeding;
         }
         else return null;
         

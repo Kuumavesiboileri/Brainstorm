@@ -1,3 +1,0 @@
-<testsuite tests='1' results='1' failures='0' disabled='0' errors='0' time='1.287' name='behavior.logging_in'>
-  <testcase classname='behavior.logging_in' name='user can add a new book' time='0.973' />
-</testsuite>

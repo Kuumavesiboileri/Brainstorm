@@ -1,4 +1,0 @@
-<testsuite tests='2' results='2' failures='0' disabled='0' errors='0' time='2.18' name='behavior.add_new_book'>
-  <testcase classname='behavior.add_new_book' name='user can add a new book' time='1.744' />
-  <testcase classname='behavior.add_new_book' name='user can add a new article' time='0.079' />
-</testsuite>

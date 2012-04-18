@@ -11,28 +11,41 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <script>
-            function selectForm() {
+            function selectFields() {
                 var selection = document.getElementById('selection');
-                var bookForm = document.getElementById('book-form');
-                var inpro = document.getElementById('inproceeding-form');
-                var articleForm = document.getElementById('article-form');
                 if(selection.selectedIndex==0) {
-                    articleForm.setAttribute("style", "display:block");
-                    bookForm.setAttribute("style", "display:none");
-                    inpro.setAttribute("style", "display:none");
+                    selectFieldsToHide('book');
+                    selectFieldsToHide('inproceeding');
+                    selectFieldsToShow('article');
+                    
                 }
                 else if(selection.selectedIndex==1) {
-                    bookForm.setAttribute("style", "display:block");
-                    articleForm.setAttribute("style", "display:none");
-                    inpro.setAttribute("style", "display:none");
-                    
+                    selectFieldsToHide('article');
+                    selectFieldsToHide('inproceeding');
+                    selectFieldsToShow('book');
                 }
                 else if(selection.selectedIndex==2) {
-                    inpro.setAttribute("style", "display:block");
-                    bookForm.setAttribute("style", "display:none");
-                    articleForm.setAttribute("style", "display:none");
-                    
+                    selectFieldsToHide('article');
+                    selectFieldsToHide('book');
+                    selectFieldsToShow('inproceeding');
                 }
+            }
+            function selectFieldsToHide(className) {
+             var  reference = document.getElementsByClassName(className);
+                    for(var i = 0; i < reference.length; i++) {
+                        reference[i].setAttribute("style", "display:none");
+                    }
+            }
+            function selectFieldsToShow(className) {
+                var  reference = document.getElementsByClassName(className);
+                    for(var i = 0; i < reference.length; i++) {
+                        reference[i].setAttribute("style", "display:inline");
+                    }
+                    setButtonText(className);
+            }
+            function setButtonText(className) {
+                var button = document.getElementById('submit');
+                button.setAttribute('value', 'add new '+className);
             }
             
         </script>
@@ -62,32 +75,42 @@
         <h1>webRef</h1>
         <div style="border-style: solid;border-width: thin; border-color:silver; background-color: whitesmoke; margin-bottom: 10px">
             <h2>Add new reference</h2>
-            <select id="selection" onchange="selectForm()">
-                <option>Article</option>
-                <option>Book</option>
-                <option>Inproceedings</option>
+            <select id="selection" onchange="selectFields()">
+                <option value="Article">Article</option>
+                <option value="Book">Book</option>
+                <option value="Inproceeding">Inproceedings</option>
             </select>
-            <form id="book-form" action="addRef" method="POST" style="display: none">
+            <form id="ref-form" action="addRef" method="POST">
                 <h3>New book reference</h3>
                 <fieldset>
                     <legend>Required fields</legend>
                     <label>tag:</label>
-                    <input id="book-tag" type="text" name="tag" />
+                    <input id="tag" type="text" name="tag" />
                     <label>author:</label>
-                    <input id="book-author" type="text" name="author"/>
+                    <input id="author" type="text" name="author"/>
                     <label>title:</label>
-                    <input id="book-title" type="text" name="title">
-                    <label>publisher:</label> 
-                    <input id="publisher" type="text" name="publisher" />
+                    <input id="title" type="text" name="title">
+                    <label class="inproceeding" >booktitle:</label>
+                    <input class="inproceeding" id="booktitle" type="text" name="booktitle">
+                    <label class="book" >publisher:</label> 
+                    <input class="book" id="book-publisher" type="text" name="book_publisher" />
+                    <label class="article">journal:</label>
+                    <input class="article" id="journal" type="text" name="journal" />
                     <label>year:</label>
-                    <input id="book-year" type="text" name="year" />
+                    <input id="year" type="text" name="ref_year" />
                 </fieldset>
                 <fieldset>
                     <legend>Optional fields</legend>
                     <label>note:</label>
-                    <textarea rows="10" cols="50" name="note"></textarea> <br>                    
+                    <textarea rows="10" cols="50" name="note"></textarea> <br>
+                    <label class="inproceeding">editor:</label>
+                    <input class="inproceeding" type="text" name="editor"/>
                     <label>volume:</label>
                     <input type="text" value="0" name="volume" />
+                    <label class="article" >number:</label>
+                    <input class="article" value="0" type="text" name="number"/>
+                    <label class="article" >pages:</label>
+                    <input class="article" type="text" name="pages">
                     <label>series:</label>
                     <input type="text" name="series"/>
                     <label>address:</label>
@@ -95,89 +118,15 @@
                     <label>edition:</label>
                     <input type="text" name="edition" />
                     <label>month:</label>
-                    <input type="text" name="month" />
+                    <input type="text" name="ref_month" />
+                    <label class="inproceeding">publisher:</label>
+                    <input class="inproceeding" id="inpro-publisher" type="text" name="inpro_publisher" /><br>
+                    <label class="inproceeding" >organization:</label>
+                    <input class="inproceeding" type="text" name="organization" />
                     <label>key:</label>
-                    <input type="text" name="key" />
+                    <input type="text" name="ref_key" />
                 </fieldset>
-                <input type="submit" value="add" />
-            </form>
-            <form id="article-form" action="addRef" method="POST" style="display: block" >
-                <h3>New article reference</h3>
-                <fieldset>
-                    <legend>required fields</legend>
-                    <label>tag:</label>
-                    <input id="article-tag" type="text" name="tag" />
-                    <label>author:</label>
-                    <input id="article-author" type="text" name="author"/>
-                    <label>title:</label>
-                    <input id="article-title" type="text" name="title">
-                    <label>journal:</label>
-                    <input id="journal" type="text" name="journal" />
-                    <label>year:</label>
-                    <input id="article-year" type="text" name="year" />
-                    
-                </fieldset>
-                <fieldset>
-                    <legend>Optional fields</legend>
-                    <label>note:</label>
-                    <textarea rows="10" cols="50" name="note"></textarea> <br>                    
-                    <label>volume:</label>
-                    <input type="text" value="0" name="volume" />
-                    <label>number:</label>
-                    <input value="0" type="text" name="number"/>
-                    <label>pages:</label>
-                    <input type="text" name="pages">
-                    <label>month:</label>
-                    <input type="text" name="month" />
-                    <label>key:</label>
-                    <input type="text" name="key" />
-                </fieldset>
-                <input type="submit" value="add" />
-                
-            </form>
-            
-            <form id="inproceeding-form" action="addRef" method="POST" style="display: none" >
-                <h3>New inproceeding reference</h3>
-                <fieldset>
-                    <legend>required fields</legend>
-                    <label>tag:</label>
-                    <input id="inpr-tag" type="text" name="tag" />
-                    <label>author:</label>
-                    <input id="inpr-author" type="text" name="author"/>
-                    <label>title:</label>
-                    <input id="inpr-title" type="text" name="title">
-                    <label>booktitle:</label>
-                    <input id="booktitle" type="text" name="booktitle">
-                    <label>year:</label>
-                    <input id="inpr-year" type="text" name="year" />
-                    
-                    
-                </fieldset>
-                <fieldset>
-                    <legend>Optional fields</legend>
-                    <label>note:</label>
-                    <textarea rows="10" cols="50" name="note"></textarea> <br>
-                    <label>editor:</label>
-                    <input type="text" name="editor"/>
-                    <label>volume:</label>
-                    <input type="text" value="0" name="volume" />
-                    <label>series:</label>
-                    <input type="text" name="series"/>
-                    <label>pages:</label>
-                    <input type="text" name="pages">
-                    <label>address:</label>
-                    <input type="text" name="address"/>
-                    <label>month:</label>
-                    <input type="text" name="month" />
-                    <label>organization:</label>
-                    <input type="text" name="organization" />
-                    <label>publisher:</label>
-                    <input type="text" name="publisher" /><br>
-                    <label>key:</label>
-                    <input type="text" name="key" />
-                </fieldset>
-                <input type="submit" value="add" />
-                
+                <input id="submit" type="submit" value="add new article" />
             </form>
         </div>
         <div style="border-style: solid;border-width: thin; border-color:silver; background-color: whitesmoke; margin-bottom: 10px">
@@ -216,7 +165,7 @@
                     <td>${ref.author}</td>
                     <td>${ref.title}</td>
                     <td>${ref.booktitle}</td>
-                    <td>${ref.publisher}</td>
+                    <td>${ref.book_publisher}${ref.inpro_publisher}</td>
                     <td>${ref.journal}</td>
                     <td>${ref.ref_year}</td>
                     <td>${ref.volume}</td>
@@ -234,6 +183,9 @@
             </tbody>
         </table>
         </div>
-       
+        <script>
+            selectFieldsToHide('book');
+            selectFieldsToHide('inproceeding');
+        </script>
     </body>
 </html>

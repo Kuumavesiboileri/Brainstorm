@@ -38,13 +38,14 @@ public class DatabRef implements Serializable {
      * 
      * 
      * inproceeding fields
-     * Required fields: author/editor, title, booktitle, year
-     * Optional fields: editor,volume, series, pages, address, month, organization, publisher, note, key
+     * Required fields: author, title, booktitle, year
+     * Optional fields: editor, volume, series, pages, address, month, organization, publisher, note, key
     */
     private String tag;
     private String author;
     private String title;
-    private String publisher;
+    private String book_publisher;
+    private String inpro_publisher;
     private int ref_year;
     private int volume;
     private String series;
@@ -63,7 +64,7 @@ public class DatabRef implements Serializable {
     private String organization;
     
     public Book dataObjectToBook() {
-        Book book = new Book(tag, author, title, publisher, ref_year, new Parser());
+        Book book = new Book(tag, author, title, book_publisher, ref_year, new Parser());
         return book;
     }
     public Article dataObjectToArticle() {
@@ -96,9 +97,16 @@ public class DatabRef implements Serializable {
         return note;
     }
 
-    public String getPublisher() {
-        return publisher;
+    public String getBook_publisher() {
+        return book_publisher;
     }
+
+    public String getInpro_publisher() {
+        return inpro_publisher;
+    }
+
+        
+    
 
     public String getSeries() {
         return series;
@@ -156,9 +164,15 @@ public class DatabRef implements Serializable {
         this.note = note;
     }
 
-    public void setPublisher(String publisher) {
-        this.publisher = publisher;
+    public void setBook_publisher(String book_publisher) {
+        this.book_publisher = book_publisher;
     }
+
+    public void setInpro_publisher(String inpro_publisher) {
+        this.inpro_publisher = inpro_publisher;
+    }
+
+    
 
     public void setSeries(String series) {
         this.series = series;

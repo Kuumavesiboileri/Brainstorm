@@ -63,6 +63,7 @@ public class Article implements Viite {
         this.key = key;
     }
 
+    @Override
     public String toLaTexString() {
         String palauta = "@Article(" + tag + ",\n";
         palauta += "AUTHOR = {" + parser.parse(author) + "},\n";
@@ -73,6 +74,7 @@ public class Article implements Viite {
         return palauta + ")";
     }
 
+    @Override
     public String toReadableString() {
         String palauta = "Author: " + author
                 + "\nTitle: " + title

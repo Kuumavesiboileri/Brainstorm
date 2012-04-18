@@ -5,10 +5,7 @@
 package webref.database;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
-import webref.domain.Book;
 import webref.domain.DatabRef;
-import webref.domain.Viite;
 
 /**
  *

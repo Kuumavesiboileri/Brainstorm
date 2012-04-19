@@ -11,9 +11,11 @@ import java.util.List;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletResponse;
+import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -38,11 +40,13 @@ public class RefController {
 //        Article article = new Article("Tagi", "Jussi Paananen", "Suomen MM -juhlimisen herattamasta pahennuksesta vuonna 2011 ja miten se peilaa nyky-yhteiskuntaamme", "Taysin turhia tieteellisia artikkeleita", 2012, new Parser());
 //        refService.addReference(article);
         model.addAttribute("references", refService.list());
+        model.addAttribute("ref", new DatabRef());
         return "home";
     }
     @RequestMapping(value="addRef", method=RequestMethod.POST)
-    public String addReference(Model model, @ModelAttribute DatabRef ref) {
-        
+    public String addReference(Model model,@Valid @ModelAttribute("ref") DatabRef ref, BindingResult result) {
+        if(result.hasErrors()) 
+            return "home";
         refService.create(ref);
         return "redirect:/";
     }
@@ -65,16 +69,4 @@ public class RefController {
         return "redirect:/";
     }
 }
-/*StringBuffer sb = new StringBuffer("whatever string you like");
-InputStream in = new ByteArrayInputStream(sb.toString().getBytes("UTF-8"));
-ServletOutputStream out = response.getOutputStream();
- 
-byte[] outputByte = new byte[4096];
-//copy binary contect to output stream
-while(in.read(outputByte, 0, 4096) != -1)
-{
-	out.write(outputByte, 0, 4096);
-}
-in.close();
-out.flush();
-out.close();*/
+

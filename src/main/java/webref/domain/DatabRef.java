@@ -10,6 +10,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import viitteenhallinta.Inproceedings;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 
 /**
  *
@@ -48,7 +51,9 @@ public class DatabRef implements Serializable {
     private String title;
     private String book_publisher;
     private String inpro_publisher;
-    private int ref_year;
+    @NotNull(message="a year must be given")
+    @Pattern(regexp="[1-2][4-9][0-9][0-9]", message="a year must be between 1400-2999")
+    private String ref_year;
     private int volume;
     private String series;
     private String address;
@@ -67,15 +72,15 @@ public class DatabRef implements Serializable {
     
     public Viite dataObjectToViite() {
         if(type.equals("book")) {
-            Book book = new Book(tag, author, title, book_publisher, ref_year, new Parser());
+            Book book = new Book(tag, author, title, book_publisher, Integer.parseInt(ref_year), new Parser());
         return book;
         }
         else if(type.equals("article")) {
-            Article article = new Article(tag, author, title, journal, ref_year, new Parser());
+            Article article = new Article(tag, author, title, journal, Integer.parseInt(ref_year), new Parser());
         return article;
         }
         else if(type.equals("inproceedings")) {
-            Inproceedings inproceeding = new Inproceedings(tag, author, title, booktitle, ref_year, new Parser());
+            Inproceedings inproceeding = new Inproceedings(tag, author, title, booktitle, Integer.parseInt(ref_year), new Parser());
             return inproceeding;
         }
         else return null;
@@ -139,7 +144,7 @@ public class DatabRef implements Serializable {
         return volume;
     }
 
-    public int getRef_year() {
+    public String getRef_year() {
         return ref_year;
     }
 
@@ -210,7 +215,7 @@ public class DatabRef implements Serializable {
         this.volume = volume;
     }
 
-    public void setRef_year(int ref_year) {
+    public void setRef_year(String ref_year) {
         this.ref_year = ref_year;
     }
 

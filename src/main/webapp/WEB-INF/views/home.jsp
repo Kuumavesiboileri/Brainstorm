@@ -1,4 +1,5 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>   
 <%-- 
     Document   : home
     Created on : 11.4.2012, 12:14:01
@@ -85,7 +86,8 @@
                 <option value="Book">Book</option>
                 <option value="Inproceeding">Inproceedings</option>
             </select>
-            <form id="ref-form" action="addRef" method="POST">
+            
+        <form:form commandName="ref" id="ref-form" action="addRef" method="POST">
                 <fieldset>
                     <legend>Required fields</legend>
                     <label>tag:</label>
@@ -101,7 +103,7 @@
                     <label class="article">journal:</label>
                     <input class="article" id="journal" type="text" name="journal" />
                     <label>year:</label>
-                    <input id="year" type="text" name="ref_year" />
+                    <form:input path="ref_year" id="year" type="text" name="ref_year" /><form:errors path="ref_year"/>
                 </fieldset>
                 <fieldset>
                     <legend>Optional fields</legend>
@@ -132,7 +134,7 @@
                     <input id="type" type="hidden" value="article" name="type"/>
                 </fieldset>
                 <input id="submit" type="submit" value="add new article" />
-            </form>
+            </form:form>
         </div>
         <div style="border-style: solid;border-width: thin; border-color:silver; background-color: whitesmoke; margin-bottom: 10px">
         <h2>References</h2>

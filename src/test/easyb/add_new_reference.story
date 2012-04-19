@@ -105,3 +105,20 @@ scenario "user can add a new inproceeding", {
         //driver.getPageSource().contains("Ergonomisten hammastikkujen historia ja vaikutus talouspolitiikaan 1800 -luvun Ruotsi-Suomessa").shouldBe true
     }
 }
+scenario "user can download bibtex", {
+    given 'user is on home page and button download bibtex is clicked', {
+        driver = new HtmlUnitDriver();
+        driver.get("http://localhost:8080");
+        
+    }
+
+    when 'a button clicked', {
+        element = driver.findElement(By.id("genBib"));
+        element.click();
+    }
+    then 'new article has been added', {
+        String userName = System.getProperty("user.name");
+        File file = new File("/cs/fs/home/"+userName+"/Downloads/bibtex.bib");
+        file.exists().shouldBe true
+    }
+}

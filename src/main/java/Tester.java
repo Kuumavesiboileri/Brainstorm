@@ -7,6 +7,7 @@
  *
  * @author jarlerik
  */
+import java.io.File;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -66,5 +67,14 @@ public class Tester {
 
         element = driver.findElement(By.id("submit"));
         element.click(); 
+        
+        element = driver.findElement(By.id("genBib"));
+        element.click();
+        String userName = System.getProperty("user.name");
+        File file = new File("/cs/fs/home/"+userName+"/Downloads/bibtex.bib");
+        System.out.println(file.exists());
+        
+        System.out.println(userName);
+        
     }
 }

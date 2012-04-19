@@ -138,7 +138,7 @@
         </div>
         <div style="border-style: solid;border-width: thin; border-color:silver; background-color: whitesmoke; margin-bottom: 10px">
         <h2>References</h2>
-        <form method="GET"><button type="submit" formaction="bibtex">download bibTex</button></form>
+        <form method="GET" ><button id="genBib" type="submit" formaction="bibtex">download bibTex</button></form>
         
                 
         choose all to bibTex file<input id="select-all" type="checkbox" name="bib" onclick="selectAll()" />

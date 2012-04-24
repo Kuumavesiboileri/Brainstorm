@@ -105,7 +105,7 @@ scenario "user can add a new inproceeding", {
         //driver.getPageSource().contains("Ergonomisten hammastikkujen historia ja vaikutus talouspolitiikaan 1800 -luvun Ruotsi-Suomessa").shouldBe true
     }
 }
-scenario "user can download bibtex", {
+/*scenario "user can download bibtex", {
     given 'user is on home page and button download bibtex is clicked', {
         driver = new HtmlUnitDriver();
         driver.get("http://localhost:8080");
@@ -121,4 +121,4 @@ scenario "user can download bibtex", {
         File file = new File("/cs/fs/home/"+userName+"/Downloads/bibtex.bib");
         file.exists().shouldBe true
     }
-}
+}*/

@@ -9,7 +9,7 @@ description 'User can log in with valid username/password-combination'
 scenario "user can add a new book", {
     given 'user is on home page and selection book is clicked', {
         driver = new HtmlUnitDriver();
-        driver.get("http://localhost:8080");
+        driver.get("http://localhost:9090");
         WebElement dropDownListBox = driver.findElement(By.id("selection"));
         Select clickThis = new Select(dropDownListBox);
         clickThis.selectByValue("Book");
@@ -41,7 +41,7 @@ scenario "user can add a new book", {
 scenario "user can add a new article", {
     given 'user is on home page and selection article is clicked', {
         driver = new HtmlUnitDriver();
-        driver.get("http://localhost:8080");
+        driver.get("http://localhost:9090");
         WebElement dropDownListBox = driver.findElement(By.id("selection"));
         Select clickThis = new Select(dropDownListBox);
         clickThis.selectByValue("Article");        
@@ -73,7 +73,7 @@ scenario "user can add a new article", {
 scenario "user can add a new inproceeding", {
     given 'user is on home page and selection inproceeding is clicked', {
         driver = new HtmlUnitDriver();
-        driver.get("http://localhost:8080");
+        driver.get("http://localhost:9090");
         WebElement dropDownListBox = driver.findElement(By.id("selection"));
         Select clickThis = new Select(dropDownListBox);
         clickThis.selectByValue("Inproceeding");        

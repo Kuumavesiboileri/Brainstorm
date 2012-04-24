@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package viitteenhallinta;
+package webref.domain;
 
 import webref.domain.Parser;
 import webref.domain.Viite;

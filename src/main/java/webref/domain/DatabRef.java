@@ -5,11 +5,12 @@
 package webref.domain;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import viitteenhallinta.Inproceedings;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
@@ -45,6 +46,7 @@ public class DatabRef implements Serializable {
      * Required fields: author, title, booktitle, year
      * Optional fields: editor, volume, series, pages, address, month, organization, publisher, note, key
     */
+    private String tagString;
     private String type;
     private String tag;
     private String author;
@@ -52,7 +54,7 @@ public class DatabRef implements Serializable {
     private String book_publisher;
     private String inpro_publisher;
     @NotNull(message="a year must be given")
-    @Pattern(regexp="[1-2][4-9][0-9][0-9]", message="a year must be between 1400-2999")
+    @Pattern(regexp="[1-2][0-9][0-9][0-9]", message="a year must be between 1000-2999")
     private String ref_year;
     private int volume;
     private String series;
@@ -69,6 +71,7 @@ public class DatabRef implements Serializable {
     private String booktitle;
     private String editor;
     private String organization;
+    private List<String> tags = new ArrayList<String>();
     
     public Viite dataObjectToViite() {
         if(type.equals("book")) {
@@ -125,7 +128,13 @@ public class DatabRef implements Serializable {
         return inpro_publisher;
     }
 
-        
+    public List<String> getTags() {
+        return tags;
+    }
+
+     public String getTagString() {
+         return tagString;
+     }   
     
 
     public String getSeries() {
@@ -164,7 +173,9 @@ public class DatabRef implements Serializable {
         this.type = type;
     }
     
-    
+    public boolean tagFound(String name) {
+        return tags.contains(name);
+    }
     public void setAddress(String address) {
         this.address = address;
     }
@@ -231,6 +242,15 @@ public class DatabRef implements Serializable {
         this.organization = organization;
     }
 
+    public void setTags(String tags) {
+        this.tags.add(tags);
+        tagString();
+    }
+
+    public void tagString() {
+        this.tagString = tags.toString();
+    }
+    
     
 
     public String getJournal() {

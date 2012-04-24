@@ -18,5 +18,11 @@ public interface ReferenceService {
     List<DatabRef> list();
 
     public String getAllReferences();
+
+    public DatabRef findById(String id);
+
+    public DatabRef save(DatabRef ref);
+
+    public List<DatabRef> findByTags(String tag);
     
 }

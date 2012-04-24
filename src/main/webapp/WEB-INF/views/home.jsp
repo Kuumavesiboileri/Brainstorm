@@ -142,6 +142,11 @@
         
                 
         choose all to bibTex file<input id="select-all" type="checkbox" name="bib" onclick="selectAll()" />
+        <div>
+            <form method="POST">
+                <input type="search" name="tag"/><input type="submit" formaction="search" value="search by tags"/>
+            </form>
+        </div>
         <table border="1" style="width: 100%">
             <thead>
                 <tr>
@@ -163,11 +168,14 @@
                     <th>organization</th>
                     <th>note</th>
                     <th>key</th>
+                    <th>keywords</th>
+                    <th>add new keywords</th>
                 </tr>
                 
             </thead>
             <tbody>
             <c:forEach var="ref" items="${references}">
+                
                 <tr>
                     <td><input class="checkToBib" type="checkbox" name="bib" onclick="selectSome()"/></td>
                     <td>${ref.type}</td>
@@ -187,10 +195,15 @@
                     <td>${ref.organization}</td>
                     <td>${ref.note}</td>
                     <td>${ref.ref_key}</td> 
+                    <td>${ref.tagString}</td>
+                    <td> <form method="POST"><input type="hidden" value="${ref.id}" name="id" /><input type="text" name="newTag"/><input type="submit" value="add" formaction="addTags"/></form></td>
                 </tr>
-            </c:forEach>
+            </c:forEach>     
             </tbody>
         </table>
+        <c:if test="${search}">
+            <p>kysely</p>
+                </c:if>
         </div>
         <script>
             selectFieldsToHide('book');

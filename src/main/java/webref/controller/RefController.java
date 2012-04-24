@@ -7,6 +7,7 @@ package webref.controller;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.List;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletOutputStream;
@@ -19,6 +20,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import webref.domain.DatabRef;
 import webref.domain.Viite;
 import webref.service.ReferenceService;
@@ -41,6 +43,7 @@ public class RefController {
 //        refService.addReference(article);
         model.addAttribute("references", refService.list());
         model.addAttribute("ref", new DatabRef());
+            
         return "home";
     }
     @RequestMapping(value="addRef", method=RequestMethod.POST)
@@ -68,5 +71,20 @@ public class RefController {
         out.close();
         return "redirect:/";
     }
+     @RequestMapping(value="addTags" ,method= RequestMethod.POST)
+     public String addTags(@RequestParam String id, @RequestParam String newTag) {
+         DatabRef ref = refService.findById(id);         
+         ref.setTags(newTag);
+         refService.save(ref);
+         return "redirect:/";
+     }
+     @RequestMapping(value="search", method= RequestMethod.POST)
+     public String search(@RequestParam String tag, Model model) {
+         System.out.println(tag);
+         List<DatabRef> result = refService.findByTags(tag);
+         model.addAttribute("ref", new DatabRef());
+         model.addAttribute("references", result);
+         return "home";
+     }
 }
 

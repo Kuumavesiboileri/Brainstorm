@@ -4,6 +4,7 @@
  */
 package webref.service;
 
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,6 +43,33 @@ public class ReferenceServiceImpl implements ReferenceService {
             references += r.dataObjectToViite().toLaTexString()+"\n";
         }
         return references;
+    }
+
+    @Override
+    public DatabRef findById(String id) {
+        long idl = Long.parseLong(id);
+        return repo.findOne(idl);
+        
+    }
+
+    @Override
+    public DatabRef save(DatabRef ref) {
+        return repo.save(ref);
+    }
+
+    @Override
+    public List<DatabRef> findByTags(String tag) {
+        List<DatabRef> all = repo.findAll();
+        
+        List<DatabRef> result = new ArrayList<DatabRef>();
+        Iterator itr = all.iterator();
+        while(itr.hasNext()) {
+            DatabRef ref = (DatabRef) itr.next();
+            if(ref.tagFound(tag)) {
+                result.add(ref);
+            }
+        }
+        return result;
     }
     
 }

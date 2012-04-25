@@ -32,7 +32,7 @@ public class InproceedingsTest {
     @Before
     public void setUp() {
         parseri = new Parser();
-        inpro = new Inproceedings("Tagi1", "Pertti Kananen", "Ergonomisten hammastikkujen historia ja vaikutus talouspolitiikaan 1800 -luvun Ruotsi-Suomessa", "Hieno kirja", 1995, parseri);
+        inpro = new Inproceedings("Tagi1", "Pertti Kananen", "Ergonomisten hammastikkujen historia ja vaikutus talouspolitiikaan 1800 -luvun Ruotsi-Suomessa", "Hieno kirja", 1995);
         oikeaRivi = "Author: Pertti Kananen"
                 + "\nTitle: Ergonomisten hammastikkujen historia ja vaikutus talouspolitiikaan 1800 -luvun Ruotsi-Suomessa"
                 + "\nBooktitle: Hieno kirja"
@@ -90,7 +90,7 @@ public class InproceedingsTest {
                 + "\nYEAR = {1995},"
                 + "\n)";
 
-        assertEquals(oikeaLaTexRivi, inpro.toLaTexString());
+        assertEquals(oikeaLaTexRivi, inpro.toLaTexString(parseri));
     }
     @Test
     public void testToLaTexStringWithAllVariables(){
@@ -122,6 +122,6 @@ public class InproceedingsTest {
         inpro.setSeries("Ixnay on the Hombre");
         inpro.setVolume(1);
 
-        assertEquals(oikeaLaTexRivi, inpro.toLaTexString());
+        assertEquals(oikeaLaTexRivi, inpro.toLaTexString(parseri));
     }
 }

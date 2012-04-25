@@ -32,7 +32,7 @@ public class ArticleTest {
     @Before
     public void setUp() {
         parseri = new Parser();
-        artikkeli = new Article("Tagi", "Jussi Paananen", "Suomen MM -juhlimisen herättämästä pahennuksesta vuonna 2011 ja miten se peilaa nyky-yhteiskuntaamme", "Täysin turhia tieteellisiä artikkeleita", 2012, parseri);
+        artikkeli = new Article("Tagi", "Jussi Paananen", "Suomen MM -juhlimisen herättämästä pahennuksesta vuonna 2011 ja miten se peilaa nyky-yhteiskuntaamme", "Täysin turhia tieteellisiä artikkeleita", 2012);
         oikeaRivi = "Author: Jussi Paananen"
                 + "\nTitle: Suomen MM -juhlimisen herättämästä pahennuksesta vuonna 2011 ja miten se peilaa nyky-yhteiskuntaamme"
                 + "\nJournal: Täysin turhia tieteellisiä artikkeleita"
@@ -87,7 +87,7 @@ public class ArticleTest {
                 + "\nJOURNAL = {T\\\"{a}ysin turhia tieteellisi\\\"{a} artikkeleita},"
                 + "\nYEAR = {2012},"
                 + "\n)";
-          assertEquals(oikeaLaTexRivi, artikkeli.toLaTexString());
+          assertEquals(oikeaLaTexRivi, artikkeli.toLaTexString(parseri));
     }
     @Test
     public void testToLaTexStringWithAllVariables(){
@@ -109,7 +109,7 @@ public class ArticleTest {
                 + "\nNOTE = {This is a note},"
                 + "\nKEY = {This is a key},"
                 + "\n)";
-        assertEquals(oikeaLaTexRivi, artikkeli.toLaTexString());
+        assertEquals(oikeaLaTexRivi, artikkeli.toLaTexString(parseri));
     }
     
 

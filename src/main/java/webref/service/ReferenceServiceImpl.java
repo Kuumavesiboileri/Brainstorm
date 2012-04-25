@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import webref.database.RefRepository;
 import webref.domain.DatabRef;
+import webref.domain.Parser;
 
 /**
  *
@@ -40,7 +41,7 @@ public class ReferenceServiceImpl implements ReferenceService {
         String references = "";
         for (Iterator<DatabRef> it = refList.iterator(); it.hasNext();) {
             DatabRef r = it.next();
-            references += r.dataObjectToViite().toLaTexString()+"\n";
+            references += r.dataObjectToViite().toLaTexString(new Parser())+"\n";
         }
         return references;
     }
@@ -58,14 +59,14 @@ public class ReferenceServiceImpl implements ReferenceService {
     }
 
     @Override
-    public List<DatabRef> findByMonster(String tag) {
+    public List<DatabRef> findBySearchWords(String tag) {
         List<DatabRef> all = repo.findAll();
         
         List<DatabRef> result = new ArrayList<DatabRef>();
         Iterator itr = all.iterator();
         while(itr.hasNext()) {
             DatabRef ref = (DatabRef) itr.next();
-            if(ref.monsterFound(tag)) {
+            if(ref.searchWordsFound(tag)) {
                 result.add(ref);
             }
         }

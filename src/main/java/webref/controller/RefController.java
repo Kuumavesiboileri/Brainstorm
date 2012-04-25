@@ -41,7 +41,9 @@ public class RefController {
 //        refService.addReference(book);
 //        Article article = new Article("Tagi", "Jussi Paananen", "Suomen MM -juhlimisen herattamasta pahennuksesta vuonna 2011 ja miten se peilaa nyky-yhteiskuntaamme", "Taysin turhia tieteellisia artikkeleita", 2012, new Parser());
 //        refService.addReference(article);
+        List<DatabRef> result = refService.list();
         model.addAttribute("references", refService.list());
+        model.addAttribute("size", result.size());
         model.addAttribute("ref", new DatabRef());
             
         return "home";
@@ -81,9 +83,10 @@ public class RefController {
      @RequestMapping(value="search", method= RequestMethod.POST)
      public String search(@RequestParam String tag, Model model) {
          System.out.println(tag);
-         List<DatabRef> result = refService.findByMonster(tag);
+         List<DatabRef> result = refService.findBySearchWords(tag);
          model.addAttribute("ref", new DatabRef());
          model.addAttribute("references", result);
+         model.addAttribute("size", result.size());
          return "home";
      }
 }

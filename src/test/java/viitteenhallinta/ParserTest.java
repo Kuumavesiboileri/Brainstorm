@@ -6,6 +6,7 @@ package viitteenhallinta;
 
 import org.junit.*;
 import static org.junit.Assert.*;
+import webref.domain.*;
 
 /**
  *

@@ -77,7 +77,7 @@ public class ArticleTest {
                 + "\nMonth: jan"
                 + "\nNote: This is a note"
                 + "\nKey: This is a key";
-        assertEquals(oikeaRivi, artikkeli.toReadableString());
+        assertEquals(oikeaRivi, artikkeli.toReadableString());  
     }
     @Test
     public void testToLaTexStringWithCompulsoryVariables(){

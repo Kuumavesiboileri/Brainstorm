@@ -58,14 +58,14 @@ public class ReferenceServiceImpl implements ReferenceService {
     }
 
     @Override
-    public List<DatabRef> findByTags(String tag) {
+    public List<DatabRef> findByMonster(String tag) {
         List<DatabRef> all = repo.findAll();
         
         List<DatabRef> result = new ArrayList<DatabRef>();
         Iterator itr = all.iterator();
         while(itr.hasNext()) {
             DatabRef ref = (DatabRef) itr.next();
-            if(ref.tagFound(tag)) {
+            if(ref.monsterFound(tag)) {
                 result.add(ref);
             }
         }

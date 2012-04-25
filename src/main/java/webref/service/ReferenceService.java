@@ -23,6 +23,6 @@ public interface ReferenceService {
 
     public DatabRef save(DatabRef ref);
 
-    public List<DatabRef> findByTags(String tag);
+    public List<DatabRef> findByMonster(String tag);
     
 }

@@ -81,7 +81,7 @@ public class RefController {
      @RequestMapping(value="search", method= RequestMethod.POST)
      public String search(@RequestParam String tag, Model model) {
          System.out.println(tag);
-         List<DatabRef> result = refService.findByTags(tag);
+         List<DatabRef> result = refService.findByMonster(tag);
          model.addAttribute("ref", new DatabRef());
          model.addAttribute("references", result);
          return "home";

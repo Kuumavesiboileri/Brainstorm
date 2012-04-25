@@ -10,6 +10,6 @@ package webref.domain;
  */
 
 public interface Viite {
-    String toLaTexString();
+    String toLaTexString(Parser parser);
     String toReadableString();
 }

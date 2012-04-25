@@ -90,7 +90,7 @@
         <form:form commandName="ref" id="ref-form" action="addRef" method="POST">
                 <fieldset>
                     <legend>Required fields</legend>
-                    <label>tag:</label>
+                    <label>Reference Name:</label>
                     <input id="tag" type="text" name="tag" />
                     <label>author:</label>
                     <input id="author" type="text" name="author"/>
@@ -119,8 +119,8 @@
                     <input class="article" type="text" name="pages">
                     <label>series:</label>
                     <input type="text" name="series"/>
-                    <label>address:</label>
-                    <input type="text" name="address">
+                    <label class="book inproceedings"  >address:</label>
+                    <input class="book inproceedings" type="text" name="address">
                     <label>edition:</label>
                     <input type="text" name="edition" />
                     <label>month:</label>
@@ -147,6 +147,11 @@
                 <input type="search" name="tag"/><input type="submit" formaction="search" value="search by tags"/>
             </form>
         </div>
+        <c:set var="size1" value="${size}"/>
+        <c:if test="${(size1 > 0)}">
+                <p>Found ${size1} matches</p>
+        </c:if>
+        
         <table border="1" style="width: 100%">
             <thead>
                 <tr>
@@ -168,8 +173,8 @@
                     <th>organization</th>
                     <th>note</th>
                     <th>key</th>
-                    <th>keywords</th>
-                    <th>add new keywords</th>
+                    <th>tags</th>
+                    <th>add new tag</th>
                 </tr>
                 
             </thead>
@@ -195,15 +200,13 @@
                     <td>${ref.organization}</td>
                     <td>${ref.note}</td>
                     <td>${ref.ref_key}</td> 
-                    <td>${ref.tagString}</td>
+                    <td>${ref.tags}</td>
                     <td> <form method="POST"><input type="hidden" value="${ref.id}" name="id" /><input type="text" name="newTag"/><input type="submit" value="add" formaction="addTags"/></form></td>
                 </tr>
             </c:forEach>     
             </tbody>
         </table>
-        <c:if test="${search}">
-            <p>kysely</p>
-                </c:if>
+        
         </div>
         <script>
             selectFieldsToHide('book');

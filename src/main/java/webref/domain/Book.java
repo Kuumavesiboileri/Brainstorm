@@ -10,8 +10,7 @@ package webref.domain;
  */
 public class Book implements Viite {
 
-    private Parser parser;
-    private String tag;
+    private String refName;
     //Required fields: author/editor, title, publisher, year
     private String author;
     private String title;
@@ -30,15 +29,30 @@ public class Book implements Viite {
     }
     
 
-    public Book(String tag, String author, String title, String publisher, int year, Parser parser) {
-        this.tag = tag;
+    public Book(String refName, String author, String title, String publisher, int year) {
+        this.refName = refName;
         this.author = author;
         this.title = title;
         this.publisher = publisher;
         this.year = year;
-        this.parser = parser;
     }
 
+    public Book(String refName, String author, String title, String publisher, int year, int volume, String series, String address, String edition, String month, String note, String key) {
+        this.refName = refName;
+        this.author = author;
+        this.title = title;
+        this.publisher = publisher;
+        this.year = year;
+        this.volume = volume;
+        this.series = series;
+        this.address = address;
+        this.edition = edition;
+        this.month = month;
+        this.note = note;
+        this.key = key;
+    }
+    
+    
     public void setVolume(int volume) {
         this.volume = volume;
     }
@@ -74,13 +88,13 @@ PUBLISHER = "Harvard University Press",
 YEAR = 1978,
 ADDRESS = "Cambridge, MA",
 ) */
-    public String toLaTexString() {
-        String palauta = "@Book(" + parser.parse(tag) + ",\n";
+    public String toLaTexString(Parser parser) {
+        String palauta = "@Book(" + parser.parse(refName) + ",\n";
         palauta += "AUTHOR = {" + parser.parse(author) + "},\n";
         palauta += "TITLE = {" + parser.parse(title) + "},\n";
         palauta += "PUBLISHER = {" + parser.parse(publisher) + "},\n";
         palauta += "YEAR = {" + year + "},\n";
-        palauta += addOptionalsToLaTex();
+        palauta += addOptionalsToLaTex(parser);
         return palauta + ")";
     }
 
@@ -119,27 +133,27 @@ ADDRESS = "Cambridge, MA",
         return palautettava;
     }
     
-    private String addOptionalsToLaTex() {
+    private String addOptionalsToLaTex(Parser parser) {
          String palautettava = "";
         if (volume != 0) {
             palautettava += "VOLUME = {" + volume + "},\n";
         }
-        if (series != null) {
+        if (series != null && !series.equals("")) {
             palautettava += "SERIES = {" + parser.parse(series) + "},\n";
         }
-        if (address != null) {
+        if (address != null && !address.equals("")) {
             palautettava += "ADDRESS = {" + parser.parse(address) + "},\n";
         }
-        if (edition != null) {
+        if (edition != null && !edition.equals("")) {
             palautettava += "EDITION = {" + parser.parse(edition) + "},\n";
         }
-        if (month != null) {
+        if (month != null && !month.equals("")) {
             palautettava += "MONTH = {" + parser.parse(month) + "},\n";
         }   
-         if (note != null) {
+         if (note != null && !note.equals("")) {
             palautettava += "NOTE = {" + parser.parse(note) + "},\n";
         }    
-          if (key != null) {
+          if (key != null && !key.equals("")) {
             palautettava += "KEY"
                     + " = {" + parser.parse(key) + "},\n";
         }    
@@ -170,10 +184,6 @@ ADDRESS = "Cambridge, MA",
         return note;
     }
 
-    public Parser getParser() {
-        return parser;
-    }
-
     public String getPublisher() {
         return publisher;
     }
@@ -183,7 +193,7 @@ ADDRESS = "Cambridge, MA",
     }
 
     public String getTag() {
-        return tag;
+        return refName;
     }
 
     public String getTitle() {
@@ -202,16 +212,12 @@ ADDRESS = "Cambridge, MA",
         this.author = author;
     }
 
-    public void setParser(Parser parser) {
-        this.parser = parser;
-    }
-
     public void setPublisher(String publisher) {
         this.publisher = publisher;
     }
 
     public void setTag(String tag) {
-        this.tag = tag;
+        this.refName = tag;
     }
 
     public void setTitle(String title) {

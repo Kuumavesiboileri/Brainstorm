@@ -32,7 +32,7 @@ public class BookTest {
     @Before
     public void setUp() {
         parseri = new Parser();
-        kirja = new Book("Tagi1", "Pertti Kananen", "Ergonomisten hammastikkujen historia ja vaikutus talouspolitiikaan 1800 -luvun Ruotsi-Suomessa", "WSOY", 1995, parseri);
+        kirja = new Book("Tagi1", "Pertti Kananen", "Ergonomisten hammastikkujen historia ja vaikutus talouspolitiikaan 1800 -luvun Ruotsi-Suomessa", "WSOY", 1995);
         oikeaRivi = "Author: Pertti Kananen"
                 + "\nTitle: Ergonomisten hammastikkujen historia ja vaikutus talouspolitiikaan 1800 -luvun Ruotsi-Suomessa"
                 + "\nPublisher: WSOY"
@@ -96,7 +96,7 @@ public class BookTest {
                 + "\nTITLE = {Ergonomisten hammastikkujen historia ja vaikutus talouspolitiikaan 1800 -luvun Ruotsi-Suomessa},"
                 + "\nPUBLISHER = {WSOY},"
                 + "\nYEAR = {1995},\n)";
-        String saatuRivi = kirja.toLaTexString();
+        String saatuRivi = kirja.toLaTexString(parseri);
         assertEquals(oikeaRivi, saatuRivi);
     }
 
@@ -122,7 +122,7 @@ public class BookTest {
         kirja.setEdition("Special");
         kirja.setNote("Death");
         kirja.setKey("This is a key");
-        String saatuRivi = kirja.toLaTexString();
+        String saatuRivi = kirja.toLaTexString(parseri);
         assertEquals(oikeaRivi, saatuRivi);
     }
 }

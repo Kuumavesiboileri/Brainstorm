@@ -9,8 +9,7 @@ package webref.domain;
  * @author todjalka
  */
 public class Article implements Viite {
-
-    private Parser parser;
+ 
     private String tag;
     //required fields: author, title, journal, year
     private String author;
@@ -24,20 +23,35 @@ public class Article implements Viite {
     private String month;
     private String note;
     private String key;
-
+    
     public Article() {
     }
-    
-    
 
-    public Article(String tag, String author, String title, String journal, int year, Parser parser) {
+    public Article(String tag, String author, String title, String journal, int year) {
         this.tag = tag;
         this.author = author;
         this.title = title;
         this.journal = journal;
         this.year = year;
-        this.parser = parser;
     }
+
+    public Article(String tag, String author, String title, String journal, int year, int volume, int number, String pages, String month, String note, String key) {
+        
+        this.tag = tag;
+        this.author = author;
+        this.title = title;
+        this.journal = journal;
+        this.year = year;
+        this.volume = volume;
+        this.number = number;
+        this.pages = pages;
+        this.month = month;
+        this.note = note;
+        this.key = key;
+    }
+
+   
+    
 
     public void setVolume(int volume) {
         this.volume = volume;
@@ -64,13 +78,13 @@ public class Article implements Viite {
     }
 
     @Override
-    public String toLaTexString() {
+    public String toLaTexString(Parser parser) {
         String palauta = "@Article(" + tag + ",\n";
         palauta += "AUTHOR = {" + parser.parse(author) + "},\n";
         palauta += "TITLE = {" + parser.parse(title) + "},\n";
         palauta += "JOURNAL = {" + parser.parse(journal) + "},\n";
         palauta += "YEAR = {" + year + "},\n";
-        palauta += addOptionalsToLaTex();
+        palauta += addOptionalsToLaTex(parser);
         return palauta + ")";
     }
 
@@ -107,7 +121,7 @@ public class Article implements Viite {
         return palautettava;
     }
 
-    private String addOptionalsToLaTex() {
+    private String addOptionalsToLaTex(Parser parser) {
         String palautettava = "";
         if (volume != 0) {
             palautettava += "VOLUME = {" + volume + "},\n";
@@ -158,10 +172,6 @@ public class Article implements Viite {
         return pages;
     }
 
-    public Parser getParser() {
-        return parser;
-    }
-
     public String getTag() {
         return tag;
     }
@@ -184,10 +194,6 @@ public class Article implements Viite {
 
     public void setJournal(String journal) {
         this.journal = journal;
-    }
-
-    public void setParser(Parser parser) {
-        this.parser = parser;
     }
 
     public void setTag(String tag) {

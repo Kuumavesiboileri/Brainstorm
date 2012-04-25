@@ -6,6 +6,7 @@ package webref.domain;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -14,6 +15,9 @@ import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
+import org.apache.xerces.impl.dv.xs.MonthDV;
+import org.apache.xerces.impl.dv.xs.YearDV;
+import org.omg.CORBA.PUBLIC_MEMBER;
 
 /**
  *
@@ -46,9 +50,8 @@ public class DatabRef implements Serializable {
      * Required fields: author, title, booktitle, year
      * Optional fields: editor, volume, series, pages, address, month, organization, publisher, note, key
     */
-    private String tagString;
     private String type;
-    private String tag;
+    private String refName;
     private String author;
     private String title;
     private String book_publisher;
@@ -71,32 +74,39 @@ public class DatabRef implements Serializable {
     private String booktitle;
     private String editor;
     private String organization;
-    private List<String> searchMonster = new ArrayList<String>();;
+    private List<String> searchWords = new ArrayList<String>();;
     private List<String> tags = new ArrayList<String>();
     
     public Viite dataObjectToViite() {
         if(type.equals("book")) {
-            Book book = new Book(tag, author, title, book_publisher, Integer.parseInt(ref_year), new Parser());
+            Book book = new Book(refName,author,title,book_publisher, Integer.parseInt(ref_year),volume,series,address,edition,ref_month,note,ref_key);
         return book;
         }
         else if(type.equals("article")) {
-            Article article = new Article(tag, author, title, journal, Integer.parseInt(ref_year), new Parser());
+            Article article = new Article(refName, author,title,journal,Integer.parseInt(ref_year), volume,number,pages,ref_month,note,ref_key);
         return article;
         }
         else if(type.equals("inproceedings")) {
-            Inproceedings inproceeding = new Inproceedings(tag, author, title, booktitle, Integer.parseInt(ref_year), new Parser());
+            Inproceedings inproceeding = new Inproceedings(refName,author,title,booktitle,Integer.parseInt(ref_year),editor,volume,series,pages,address,ref_month,organization,inpro_publisher,note,ref_key);
             return inproceeding;
         }
         else return null;
         
     }
 
-    public boolean monsterFound(String lol) {
-        return searchMonster.contains(lol);
+    public boolean searchWordsFound(String lol) {
+        Iterator itworks= searchWords.iterator();
+        while(itworks.hasNext()) {
+            String comparable =(String) itworks.next();
+            if(comparable.contains(lol)) {
+                return true;
+            }
+        }
+        return false;
     }
 
-    public void addToMonster(String adding) {
-        searchMonster.add(adding);
+    private void addToSearchWords(String adding) {
+        searchWords.add(adding);
     }
 
     public String getType() {
@@ -141,17 +151,12 @@ public class DatabRef implements Serializable {
         return tags;
     }
 
-     public String getTagString() {
-         return tagString;
-     }   
-    
-
     public String getSeries() {
         return series;
     }
 
     public String getTag() {
-        return tag;
+        return refName;
     }
 
     public String getTitle() {
@@ -180,7 +185,7 @@ public class DatabRef implements Serializable {
 
     public void setType(String type) {
         this.type = type;
-        addToMonster(type);
+        addToSearchWords(type);
     }
     
     public boolean tagFound(String name) {
@@ -188,97 +193,90 @@ public class DatabRef implements Serializable {
     }
     public void setAddress(String address) {
         this.address = address;
-        addToMonster(address);
+        addToSearchWords(address);
     }
 
     public void setAuthor(String author) {
         this.author = author;
-        addToMonster(author);
+        addToSearchWords(author);
     }
 
     public void setEdition(String edition) {
         this.edition = edition;
-        addToMonster(edition);
+        addToSearchWords(edition);
     }
 
     public void setRef_key(String ref_key) {
         this.ref_key = ref_key;
-        addToMonster(ref_key);
+        addToSearchWords(ref_key);
     }
 
     public void setRef_month(String ref_month) {
         this.ref_month = ref_month;
-        addToMonster(ref_month);
+        addToSearchWords(ref_month);
     }    
 
     public void setNote(String note) {
         this.note = note;
-        addToMonster(note);
+        addToSearchWords(note);
     }
 
     public void setBook_publisher(String book_publisher) {
         this.book_publisher = book_publisher;
-        addToMonster(book_publisher);
+        addToSearchWords(book_publisher);
     }
 
     public void setInpro_publisher(String inpro_publisher) {
         this.inpro_publisher = inpro_publisher;
-        addToMonster(inpro_publisher);
+        addToSearchWords(inpro_publisher);
     }
 
     
 
     public void setSeries(String series) {
         this.series = series;
-        addToMonster(series);
+        addToSearchWords(series);
     }
 
     public void setTag(String tag) {
-        this.tag = tag;
-        addToMonster(tag);
+        this.refName = tag;
+        addToSearchWords(tag);
     }
 
     public void setTitle(String title) {
         this.title = title;
-        addToMonster(title);
+        addToSearchWords(title);
     }
 
     public void setVolume(int volume) {
         this.volume = volume;
-        addToMonster(""+volume);
+        addToSearchWords(""+volume);
     }
 
     public void setRef_year(String ref_year) {
         this.ref_year = ref_year;
-        addToMonster(ref_year);
+        addToSearchWords(ref_year);
     }
 
     public void setBooktitle(String booktitle) {
         this.booktitle = booktitle;
-        addToMonster(booktitle);
+        addToSearchWords(booktitle);
     }
 
     public void setEditor(String editor) {
         this.editor = editor;
-        addToMonster(editor);
+        addToSearchWords(editor);
     }
 
     public void setOrganization(String organization) {
         this.organization = organization;
-        addToMonster(organization);
+        addToSearchWords(organization);
     }
 
     public void setTags(String tags) {
         this.tags.add(tags);
-        addToMonster(tags);
-        tagString();
+        addToSearchWords(tags);
     }
-
-    public void tagString() {
-        this.tagString = tags.toString();
-    }
-    
-    
 
     public String getJournal() {
         return journal;
@@ -294,17 +292,17 @@ public class DatabRef implements Serializable {
 
     public void setJournal(String journal) {
         this.journal = journal;
-        addToMonster(journal);
+        addToSearchWords(journal);
     }
 
     public void setNumber(int number) {
         this.number = number;
-        addToMonster(""+number);
+        addToSearchWords(""+number);
     }
 
     public void setPages(String pages) {
         this.pages = pages;
-        addToMonster(pages);
+        addToSearchWords(pages);
     }
     
     

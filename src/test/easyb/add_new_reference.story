@@ -4,7 +4,7 @@ import org.openqa.selenium.*
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 
-description 'User can log in with valid username/password-combination'
+description 'User can add new references to webref'
 
 scenario "user can add a new book", {
     given 'user is on home page and selection book is clicked', {
@@ -70,7 +70,7 @@ scenario "user can add a new article", {
         //driver.getPageSource().contains("Suomen MM -juhlimisen herattamasta pahennuksesta vuonna 2011 ja miten se peilaa nyky-yhteiskuntaamme").shouldBe true
     }
 }
-scenario "user can add a new inproceeding", {
+scenario "user can add a new inproceedings", {
     given 'user is on home page and selection inproceeding is clicked', {
         driver = new HtmlUnitDriver();
         driver.get("http://localhost:9090");
@@ -101,7 +101,7 @@ scenario "user can add a new inproceeding", {
         element = driver.findElement(By.id("submit"));
         element.click(); 
     }
-    then 'new article has been added', {
+    then 'new inproceedings has been added', {
         //driver.getPageSource().contains("Ergonomisten hammastikkujen historia ja vaikutus talouspolitiikaan 1800 -luvun Ruotsi-Suomessa").shouldBe true
     }
 }

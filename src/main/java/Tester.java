@@ -15,41 +15,19 @@ import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import org.openqa.selenium.support.ui.Select;
 
 public class Tester {
+    private static HtmlUnitDriver driver;
+    private static WebElement element;
    
     public static void main(String[] args) {
         WebDriver driver = new HtmlUnitDriver();
-        String url = "http://localhost:8080";
-        System.out.println(driver.getPageSource());
-       
-        driver.get(url);
+        driver.get("http://localhost:9090");
+        System.out.println( driver.getPageSource() );
         WebElement dropDownListBox = driver.findElement(By.id("selection"));
         Select clickThis = new Select(dropDownListBox);
-        clickThis.selectByValue("Article");
-        
-        // add new book
-         
-        WebElement element = driver.findElement(By.id("tag"));
-        element.sendKeys("tagi2");
-        
-        element = driver.findElement(By.id("author"));
-        element.sendKeys("Jussi Paananen");
-
-        element = driver.findElement(By.id("title"));
-        element.sendKeys("Suomen MM -juhlimisen herattamasta pahennuksesta vuonna 2011 ja miten se peilaa nyky-yhteiskuntaamme");
-        
-        element = driver.findElement(By.id("journal"));
-        element.sendKeys("Taysin turhia tieteellisia artikkeleita");
-        
-        element = driver.findElement(By.id("year"));
-        element.sendKeys("2012");
-
-        element = driver.findElement(By.id("submit"));
-        element.click();
-        
-        //add new article
-        dropDownListBox = driver.findElement(By.id("selection"));
-        clickThis = new Select(dropDownListBox);
         clickThis.selectByValue("Book");
+
+        // added new book
+
         element = driver.findElement(By.id("tag"));
         element.sendKeys("tagi1");
         
@@ -67,14 +45,78 @@ public class Tester {
 
         element = driver.findElement(By.id("submit"));
         element.click(); 
+
+        // added new book 2
+
+        dropDownListBox = driver.findElement(By.id("selection"));
+        clickThis = new Select(dropDownListBox);
+        clickThis.selectByValue("Book");
+        element = driver.findElement(By.id("tag"));
+        element.sendKeys("tagi2");
         
-        element = driver.findElement(By.id("genBib"));
+        element = driver.findElement(By.id("author"));
+        element.sendKeys("Martti Vainio");
+
+        element = driver.findElement(By.id("title"));
+        element.sendKeys("Kielletyt aineet");
+        
+        element.sendKeys("WSOY");
+        
+        element = driver.findElement(By.id("year"));
+        element.sendKeys("1995");
+
+        element = driver.findElement(By.id("submit"));
+        element.click(); 
+
+        // added new article
+
+        dropDownListBox = driver.findElement(By.id("selection"));
+        clickThis = new Select(dropDownListBox);
+        clickThis.selectByValue("Article");
+        element = driver.findElement(By.id("tag"));
+        element.sendKeys("tagi2");
+        
+        element = driver.findElement(By.id("author"));
+        element.sendKeys("Jussi Paananen");
+
+        element = driver.findElement(By.id("title"));
+        element.sendKeys("Suomen MM -juhlimisen herattamasta pahennuksesta vuonna 2011 ja miten se peilaa nyky-yhteiskuntaamme");
+        
+        element = driver.findElement(By.id("journal"));
+        element.sendKeys("Taysin turhia tieteellisia artikkeleita");
+        
+        element = driver.findElement(By.id("year"));
+        element.sendKeys("2012");
+
+        element = driver.findElement(By.id("submit"));
+        element.click(); 
+
+        // added new article 2
+
+        dropDownListBox = driver.findElement(By.id("selection"));
+        clickThis = new Select(dropDownListBox);
+        clickThis.selectByValue("Article");
+        element = driver.findElement(By.id("tag"));
+        element.sendKeys("tagi2");
+        
+        element = driver.findElement(By.id("author"));
+        element.sendKeys("Kalle Sääpallo");
+
+        element = driver.findElement(By.id("title"));
+        element.sendKeys("Brasilialaisten perhosten vaikutus Suomen sääoloissa - perhosvaikutus ilmastonmuutoksessa");
+        
+        element = driver.findElement(By.id("journal"));
+        element.sendKeys("Sää ja mää");
+        
+        element = driver.findElement(By.id("year"));
+        element.sendKeys("2012");
+
+        element = driver.findElement(By.id("submit"));
+        element.click(); 
+        element = driver.findElement(By.name("etsi"));
+        element.sendKeys("sää");
+        element = driver.findElement(By.id("search-submit"));
         element.click();
-        String userName = System.getProperty("user.name");
-        File file = new File("/cs/fs/home/"+userName+"/Downloads/bibtex.bib");
-        System.out.println(file.exists());
-        
-        System.out.println(userName);
-        
+        System.out.println(driver.getPageSource());
     }
 }

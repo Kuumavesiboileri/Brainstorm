@@ -11,6 +11,69 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link href='http://fonts.googleapis.com/css?family=Monoton' rel='stylesheet' type='text/css'>
+        <style>
+            .border {
+                -webkit-border-radius: 15px;
+                -moz-border-radius: 15px;
+                 border-radius: 15px;
+                 padding: 7px;
+            }
+            #logo {
+                
+                font-family: 'Monoton', cursive;
+                font-size: 2em;
+                size: 10em;
+                border-style: solid;
+                border-width: thin;
+                border-color: silver;
+                background-color: whitesmoke;
+                margin-bottom: 10px;
+                
+                                /* Firefox */
+                display:-moz-box;
+                -moz-box-orient:horizontal;
+                -moz-box-pack:center;
+                -moz-box-align:center;
+
+                /* Safari and Chrome */
+                display:-webkit-box;
+                -webkit-box-orient:horizontal;
+                -webkit-box-pack:center;
+                -webkit-box-align:center;
+
+                /* W3C */
+                display:box;    
+                box-orient:horizontal;
+                box-pack:center;
+                box-align:center;
+                
+            }
+            #reference-add {
+                border-style: solid;
+                border-width: thin; 
+                border-color:silver; 
+                background-color: whitesmoke; 
+                margin-bottom: 10px
+            }
+            #reference-show {
+                border-style: solid;
+                border-width: thin; border-color:silver; 
+                background-color: whitesmoke; 
+                margin-bottom: 10px;
+            }
+            table, th, tr, td {
+            -moz-border-radius: 5px;
+            -webkit-border-radius: 5px;
+            border-bottom-right-radius: 5px;
+            border-color: silver;
+                
+            }
+            th {
+                background-color: silver;
+            }
+            
+        </style>
         <script>
             function selectFields() {
                 var selection = document.getElementById('selection');
@@ -78,8 +141,11 @@
         <title>webRef | home</title>
     </head>
     <body>
-        <h1>webRef</h1>
-        <div style="border-style: solid;border-width: thin; border-color:silver; background-color: whitesmoke; margin-bottom: 10px">
+        <div id="logo" class="border">
+            <h1>webRef</h1>
+        </div>
+        
+        <div id="reference-add" class="border">
             <h2>Add new reference</h2>
             <select id="selection" onchange="selectFields()">
                 <option value="Article">Article</option>
@@ -136,7 +202,7 @@
                 <input id="submit" type="submit" value="add new article" />
             </form:form>
         </div>
-        <div style="border-style: solid;border-width: thin; border-color:silver; background-color: whitesmoke; margin-bottom: 10px">
+        <div  id="reference-show" class="border">
         <h2>References</h2>
         <form method="GET" ><button id="genBib" type="submit" formaction="bibtex">download bibTex</button></form>
         
@@ -144,7 +210,7 @@
         choose all to bibTex file<input id="select-all" type="checkbox" name="bib" onclick="selectAll()" />
         <div>
             <form method="POST">
-                <input type="search" name="tag"/><input type="submit" formaction="search" value="search by tags"/>
+                <input id="search" type="search" name="etsi"/><input id="search-submit" type="submit" formaction="search" value="search"/>
             </form>
         </div>
         <c:set var="size1" value="${size}"/>
@@ -201,7 +267,7 @@
                     <td>${ref.note}</td>
                     <td>${ref.ref_key}</td> 
                     <td>${ref.tags}</td>
-                    <td> <form method="POST"><input type="hidden" value="${ref.id}" name="id" /><input type="text" name="newTag"/><input type="submit" value="add" formaction="addTags"/></form></td>
+                    <td> <form method="POST"><input type="hidden" value="${ref.id}" name="id" /><input type="text" name="newTag"/><input id="tagsubmit" type="submit" value="add" formaction="addTags"/></form></td>
                 </tr>
             </c:forEach>     
             </tbody>

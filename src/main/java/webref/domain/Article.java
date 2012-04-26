@@ -129,16 +129,16 @@ public class Article implements Viite {
         if (number != 0) {
             palautettava += "NUMBER = {" + number + "},\n";
         }
-        if (pages != null) {
+        if (pages != null && !pages.equals("")) {
             palautettava += "PAGES = {" + parser.parse(pages) + "},\n";
         }      
-        if (month != null) {
+        if (month != null && !month.equals("")) {
             palautettava += "MONTH = {" + parser.parse(month) + "},\n";
         }
-        if (note != null) {
+        if (note != null && !note.equals("")) {
             palautettava += "NOTE = {" + parser.parse(note) + "},\n";
         }
-        if (key != null) {
+        if (key != null && !key.equals("")) {
             palautettava += "KEY = {" + parser.parse(key) + "},\n";
         }
         return palautettava;

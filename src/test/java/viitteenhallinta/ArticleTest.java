@@ -151,9 +151,5 @@ public class ArticleTest {
        
        artikkeli.setVolume(12);
        assertEquals(12, artikkeli.getVolume());
-       
-       Parser toinenParseri = new Parser();
-       artikkeli.setParser(toinenParseri);
-       assertTrue(toinenParseri == artikkeli.getParser());
     }
 }

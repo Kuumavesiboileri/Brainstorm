@@ -43,6 +43,7 @@ public class ArticleTest {
     public void tearDown() {
     }
     
+    
     @Test
     public void constructorWorks(){
         assertEquals(oikeaRivi, artikkeli.toReadableString());
@@ -111,6 +112,48 @@ public class ArticleTest {
                 + "\n)";
         assertEquals(oikeaLaTexRivi, artikkeli.toLaTexString(parseri));
     }
-    
+    @Test
+    public void dummyConstructorWorks(){
+        Article dummy = new Article();
+        assertFalse(dummy == null);
+    }
+    @Test
+    public void settersAndGettersWork(){
+       artikkeli.setAuthor("Jussi Parviainen");
+       assertEquals("Jussi Parviainen", artikkeli.getAuthor());
 
+       artikkeli.setJournal("Turha artikkeli");
+       assertEquals("Turha artikkeli", artikkeli.getJournal());
+       
+       artikkeli.setTag("Tagi");
+       assertEquals("Tagi", artikkeli.getTag());
+       
+       artikkeli.setTitle("Katoavaisuuden kaihoava kaihi");
+       assertEquals("Katoavaisuuden kaihoava kaihi", artikkeli.getTitle());
+       
+       artikkeli.setNote("Nootti");
+       assertEquals("Nootti", artikkeli.getNote());
+       
+       artikkeli.setYear(1600);
+       assertEquals(1600, artikkeli.getYear()); 
+       
+       artikkeli.setKey("Avain");
+       assertEquals("Avain", artikkeli.getKey());
+       
+       artikkeli.setMonth("feb");
+       assertEquals("feb", artikkeli.getMonth());
+       
+       artikkeli.setNumber(42);
+       assertEquals(42, artikkeli.getNumber());
+       
+       artikkeli.setPages("1--40");
+       assertEquals("1--40", artikkeli.getPages());
+       
+       artikkeli.setVolume(12);
+       assertEquals(12, artikkeli.getVolume());
+       
+       Parser toinenParseri = new Parser();
+       artikkeli.setParser(toinenParseri);
+       assertTrue(toinenParseri == artikkeli.getParser());
+    }
 }
